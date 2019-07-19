@@ -18,6 +18,16 @@ html, body {
   min-height: 100%;
   height: auto;
 }
+#content-container section blockquote {
+  text-align: center;
+  color: #727878;
+  font-size: 1.1em;
+}
+#content-container hr {
+  border-top: 1px dotted #727878;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 .title-of-section {
   color: rgb(17, 91, 119);
@@ -26,7 +36,7 @@ html, body {
 }
 
 #educations {
-  background-color: rgb(249, 239, 226);
+  background-color: #f3efe0;
   padding: 5%;
 }
 #abilities {
@@ -39,7 +49,7 @@ html, body {
 #side-profile {
   width: 40%;
   height: 100%;
-  background-color: rgb(17, 91, 119);
+  background-color: rgb(16, 117, 102);
   left: 60%;
 }
 

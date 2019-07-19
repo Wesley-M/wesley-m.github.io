@@ -13,7 +13,6 @@ html, body {
   height: 100%;
   float: left;
 }
-
 #content-container section {
   width: 100%;
   min-height: 100%;
@@ -30,11 +29,9 @@ html, body {
   background-color: rgb(249, 239, 226);
   padding: 5%;
 }
-
 #abilities {
   background-color: rgba(17, 91, 119, 0.1);
 }
-
 #contacts {
   background-color: rgba(17, 91, 119, 0.2);
 }
@@ -51,7 +48,6 @@ html, body {
   grid-template-columns: 50% 50%;
   position: relative;
 }
-
 #picture-container img {
   width: 12em;
   height: 12em;
@@ -65,11 +61,9 @@ html, body {
   line-height: 10px;
   left: 55%;
 }
-
 #personal-info p {
   font-weight: lighter;
 }
-
 #resume {
   text-align: justify;
   font-weight: lighter;
@@ -85,20 +79,17 @@ html, body {
   background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
   color: white;
-  align-items: center;
+  line-height: 50px;
 }
-
 #scrollspy .active {
-  background-color: rgb(12, 72, 94);
+  background-color: rgba(16, 251, 251, 0.4);
 }
-
 .option-spy {
   cursor: pointer;
   height: 100%;
 }
-
 .option-spy:hover {
-  background-color: rgba(7, 189, 141, 0.5);
+  background-color: rgba(16, 251, 251, 0.2);
 }
 
 #contact-info {
@@ -107,12 +98,10 @@ html, body {
   position: absolute;
   text-align: justify;
 }
-
 #contact-info a {
   color: white;
   margin-left: 48px;
 }
-
 #contact-info img {
   height: 48px;
   width: 48px;
@@ -125,6 +114,7 @@ html, body {
 .grid-template-columns {
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .vertical-center {
   margin: 0;
   position: absolute;

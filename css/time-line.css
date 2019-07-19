@@ -102,14 +102,14 @@ body {
 
 .content:hover {
   background-color: rgba(26, 119, 80, 0.8);
-  transition: background-color 500ms linear;
+  transition: background-color 250ms linear;
 }
 
 .right:hover:before {
   border: medium solid rgba(26, 119, 80, 0.8);
   border-width: 10px 10px 10px 0;
   border-color: transparent rgba(26, 119, 80, 0.8) transparent transparent;
-  transition: border-color 500ms linear;
+  transition: border-color 250ms linear;
 }
 
 .content h3 {

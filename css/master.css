@@ -1,5 +1,5 @@
 * {
-  font-family: Roboto;
+  font-family: 'Open Sans', sans-serif 
 }
 
 html, body {
@@ -11,7 +11,6 @@ html, body {
 #content-container {
   width: 60%;
   height: 100%;
-  background-color: rgb(209, 217, 227);
   float: left;
 }
 
@@ -22,14 +21,13 @@ html, body {
 
 .title-of-section {
   color: rgb(17, 91, 119);
-  font-size: 1.8em;
+  font-size: 1.9em;
   font-weight: 300;
-  padding: 5%;
-  display: block;
 }
 
 #educations {
-  background-color: white;
+  background-color: rgb(249, 239, 226);
+  padding: 5%;
 }
 
 #abilities {

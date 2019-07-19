@@ -1,0 +1,96 @@
+* {
+  font-family: Roboto;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#content-container {
+  width: 60%;
+  height: 100%;
+  background-color: rgb(209, 217, 227);
+  float: left;
+}
+
+#content-container section {
+  width: 100%;
+  height: 100%;
+}
+
+.title-of-section {
+  color: rgb(17, 91, 119);
+  font-size: 1.8em;
+  font-weight: 300;
+  padding: 5%;
+  display: block;
+}
+
+#educations {
+  background-color: white;
+}
+
+#abilities {
+  background-color: rgba(17, 91, 119, 0.1);
+}
+
+#contacts {
+  background-color: rgba(17, 91, 119, 0.2);
+}
+
+#side-profile {
+  width: 40%;
+  height: 100%;
+  background-color: rgb(17, 91, 119);
+  left: 60%;
+}
+
+#picture-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+}
+
+#picture-container img {
+  width: 12em;
+  height: 12em;
+  margin: 30px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#personal-info {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 10px;
+  left: 55%;
+}
+
+#personal-info p {
+  font-weight: lighter;
+}
+
+#resume {
+  text-align: justify;
+  font-weight: lighter;
+  padding: 5% 5%;
+  color: white;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+#contact-info {
+
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.fixed {
+  position: fixed;
+}

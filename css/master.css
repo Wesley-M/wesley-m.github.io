@@ -1,5 +1,5 @@
 * {
-  font-family: 'Open Sans', sans-serif 
+  font-family: 'Open Sans', sans-serif
 }
 
 html, body {
@@ -16,7 +16,8 @@ html, body {
 
 #content-container section {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  height: auto;
 }
 
 .title-of-section {
@@ -78,10 +79,52 @@ html, body {
   line-height: 1.4em;
 }
 
-#contact-info {
-
+#scrollspy {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: white;
+  align-items: center;
 }
 
+#scrollspy .active {
+  background-color: rgb(12, 72, 94);
+}
+
+.option-spy {
+  cursor: pointer;
+  height: 100%;
+}
+
+.option-spy:hover {
+  background-color: rgba(7, 189, 141, 0.5);
+}
+
+#contact-info {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  text-align: justify;
+}
+
+#contact-info a {
+  color: white;
+  margin-left: 48px;
+}
+
+#contact-info img {
+  height: 48px;
+  width: 48px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+}
+.grid-template-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .vertical-center {
   margin: 0;
   position: absolute;
@@ -91,4 +134,28 @@ html, body {
 }
 .fixed {
   position: fixed;
+}
+.bold {
+  font-weight: bold;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media (max-width: 700px) {
+  #side-profile {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 70%;
+  }
+  #content-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  #picture-container img {
+    width: 10em;
+    height: 10em;
+  }
 }

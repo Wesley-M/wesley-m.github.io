@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Site</title>
+    <title>Wesley Matteus</title>
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/time-line.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
   <body>
     <div id="side-profile" class="fixed">
@@ -32,7 +33,10 @@
         If everyone is moving forward together, then success takes care of itself (Henry Ford)
         </blockquote>
       </div>
-      <div id="contact-info">
+      <div id="scrollspy" class="grid grid-template-columns">
+        <div class="bold option-spy active" name="educations">Educations</div>
+        <div class="bold option-spy" name="abilities">Abilities</div>
+        <div class="bold option-spy" name="contacts">Contacts</div>
       </div>
     </div>
 
@@ -45,7 +49,7 @@
           <div class="container right">
             <div class="content">
               <h3><abbr title="Universidade Federal de Campina Grande">UFCG</abbr> - Bachelor - Computer Science | 2018 - ?</h3>
-              <p>In the university the lessons are much deeper in concepts and
+              <p class="details">In the university the lessons are much deeper in concepts and
                 practice and I've had to review and profound pretty much everything
                 that I already had some experience before. Moreover, I've had contact
                 with various subjects that weren't exposed to me earlier, e.g. data
@@ -55,7 +59,7 @@
           <div class="container right">
             <div class="content">
               <h3><abbr title="Instituto Federal de Educação, Ciência e Tecnologia">IFRN</abbr> - Computer Technician | 2014 - 2018</h3>
-              <p>The education was mainly focused on giving an overall vision
+              <p class="details">The education was mainly focused on giving an overall vision
                 about informatics, thanks to that vision the subjects were
                 diverse: C++ (introduction to programming), web development
                 (HTML, CSS, Javascript, PHP, SQL),  Java (POO) and a bit of
@@ -73,7 +77,14 @@
         <span class="title-of-section">
           Contacts
         </span>
+        <div id="contact-info">
+          <img src="images/google-plus.png" class="vertical-center" alt="Google icon" height="48" width="48">
+          <a href="mailto:wesley.santos@ccc.ufcg.edu.br">
+            <span class="vertical-center">wesley.santos@ccc.ufcg.edu.br</span>
+          </a>
+        </div>
       </section>
     </div>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

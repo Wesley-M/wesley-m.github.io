@@ -122,7 +122,13 @@ body {
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+
+  #content-container section {
+    min-height: auto;
+    height: auto;
+  }
+
 /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
@@ -152,4 +158,18 @@ body {
   .right {
     left: 0%;
   }
+
+  .content {
+    padding: 10px 10px;
+  }
+
+  .content h3 {
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
+  .content .details {
+    display: none;
+  }
+
 }

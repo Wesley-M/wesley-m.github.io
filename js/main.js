@@ -1,44 +1,56 @@
 window.onload = () => {
-  // Scroll to element position
-  var elements = document.getElementsByClassName("option-spy");
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', scrollTo, false);
+  new scrollSpy().init("option-spy");
+}
+
+/* Handle the ScrollSpy element */
+function scrollSpy() {
+  this.init = function(className) {
+    addScrollTo(className);
+    handleActiveElements(className);
+    window.addEventListener("scroll", () => {
+      handleActiveElements(className);
+    });
   }
 
-  // Set 'active' class in the current appearing section
-  setActive();
-  window.addEventListener("scroll", () => {
-    setActive();
-  });
-}
-
-function setActive() {
-  var BODY_RECT = document.body.getBoundingClientRect();
-  var EDUCATIONS_POSITION = document.querySelector('#educations').getBoundingClientRect().top - BODY_RECT.too - 300;
-  var ABILITIES_POSITION = document.querySelector('#abilities').getBoundingClientRect().top - BODY_RECT.top - 300;
-  var CONTACTS_POSITION = document.querySelector('#contacts').getBoundingClientRect().top - BODY_RECT.top - 300;
-
-  removeActive();
-  offsetY = window.pageYOffset;
-  if (offsetY < ABILITIES_POSITION) {
-    document.getElementsByName("educations")[0].classList.toggle("active");
-  } else if (offsetY < CONTACTS_POSITION) {
-    document.getElementsByName("abilities")[0].classList.toggle("active");
-  } else {
-    document.getElementsByName("contacts")[0].classList.toggle("active");
+  var addScrollTo = function(className) {
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', (e) => {
+        var name = e.target.getAttribute("name");
+        document.querySelector("#" + name).scrollIntoView({ behavior: 'smooth' });
+      }, false);
+    }
   }
-}
 
-function scrollTo() {
-  var name = this.getAttribute("name");
-  document.querySelector("#" + name).scrollIntoView({ behavior: 'smooth' });
-}
+  var handleActiveElements = function(className) {
+    var BODY_TOP = document.body.getBoundingClientRect().top;
 
-function removeActive() {
-  var elements = document.getElementsByClassName("option-spy");
-  for (var i = 0; i < elements.length; i++) {
-    if (elements[i].classList.contains("active")) {
-      elements[i].classList.toggle("active");
+    var positions = [];
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++) {
+      var name = elements[i].getAttribute("name");
+      var target = document.querySelector("#" + name);
+      positions.push(target.getBoundingClientRect().top - BODY_TOP);
+    }
+
+    clearActives(className);
+
+    var window_y = window.pageYOffset;
+    for (var j = 0; j < positions.length; j++) {
+      if (window_y <= positions[j]) {
+        var targetName = elements[j].getAttribute("name");
+        document.querySelector("." + className + "[name=" + targetName + "]").classList.toggle("active");
+        break;
+      }
+    }
+  }
+
+  var clearActives = function(className) {
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].classList.contains("active")) {
+        elements[i].classList.toggle("active");
+      }
     }
   }
 }

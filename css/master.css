@@ -34,6 +34,7 @@ html, body {
 }
 #skills-container, #languages-container {
   margin-left: 100px;
+  margin-top: 5%;
 }
 
 .item{
@@ -46,6 +47,9 @@ html, body {
 }
 .rating {
   color: rgb(16, 117, 102);
+}
+.item:hover .rating {
+  letter-spacing: 0.2em;
 }
 
 .title-of-section {
@@ -134,6 +138,9 @@ html, body {
 }
 .grid-template-columns-3 {
   grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-template-columns-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .vertical-center {

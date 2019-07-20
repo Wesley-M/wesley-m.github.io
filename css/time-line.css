@@ -36,17 +36,32 @@ body {
 }
 
 /* The circles on the timeline */
-.container::after {
-  content: '';
+.timeline-bullet, .first-bullet {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  right: -10px;
+  width: 20px;
+  height: 20px;
+  right: 99%;
   background-color: rgb(64, 120, 96);
   border: 4px solid #9bfeba;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
+}
+
+.first-bullet {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(0, 249, 137);
+  }
+  70% {
+      box-shadow: 0 0 0 15px rgba(0, 249, 137, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(0, 249, 137, 0);
+  }
 }
 
 /* Place the container to the left */

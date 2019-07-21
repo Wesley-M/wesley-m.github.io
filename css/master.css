@@ -215,6 +215,10 @@ html, body {
     height: auto;
     min-height: 70%;
   }
+  #picture-container img {
+    width: 10em;
+    height: 10em;
+  }
   section blockquote {
     font-size: 1em !important;
   }
@@ -245,8 +249,8 @@ html, body {
 
 @media (max-width: 400px) {
   #picture-container img {
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
   }
   #fs-frm-inputs {
     width: 100%;

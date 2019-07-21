@@ -24,19 +24,21 @@ function scrollSpy() {
 
   var handleActiveElements = function(className) {
     var BODY_TOP = document.body.getBoundingClientRect().top;
+    var OFFSET = 20;
 
     var positions = [];
     var elements = document.getElementsByClassName(className);
     for (var i = 0; i < elements.length; i++) {
       var name = elements[i].getAttribute("name");
       var target = document.querySelector("#" + name);
-      positions.push(target.getBoundingClientRect().top - BODY_TOP);
+      positions.push(target.getBoundingClientRect().top - BODY_TOP + OFFSET);
     }
 
     clearActives(className);
 
     var window_y = window.pageYOffset;
     for (var j = 0; j < positions.length; j++) {
+      console.log(window_y + " - " + positions[j])
       if (window_y <= positions[j]) {
         var targetName = elements[j].getAttribute("name");
         document.querySelector("." + className + "[name=" + targetName + "]").classList.toggle("active");

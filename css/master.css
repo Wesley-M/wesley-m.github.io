@@ -215,8 +215,31 @@ html, body {
     height: auto;
     min-height: 70%;
   }
+  section blockquote {
+    font-size: 1em !important;
+  }
+  section .title-of-section {
+    font-size: 1.4em;
+  }
+  #contacts .title-of-section {
+    font-size: 1.6em;
+  }
   #content-container {
     width: 100%;
+  }
+  #fs-frm-inputs {
+    width: 100%;
+    margin: 0;
+  }
+  #fs-frm-inputs input, textarea {
+    width: 100%;
+  }
+  #skills-container, #languages-container {
+    margin-left: 5%;
+    font-size: .8em;
+  }
+  #scrollspy {
+    font-size: 0.8em;
   }
 }
 
@@ -224,5 +247,11 @@ html, body {
   #picture-container img {
     width: 10em;
     height: 10em;
+  }
+  #fs-frm-inputs {
+    width: 100%;
+  }
+  .title-of-section {
+    font-size: 1.4em;
   }
 }

@@ -9,7 +9,7 @@ import styles from './TabbedMenu.module.css'
 
 function TabbedMenu() {
     return (
-        <ul class={styles.tabbedMenu}>
+        <ul className={styles.tabbedMenu}>
             <li className={styles.activeTab}>
                 <Home />
                 <span>Home</span>

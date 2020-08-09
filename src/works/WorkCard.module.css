@@ -1,0 +1,62 @@
+.WorkCard {
+    width: 100%;
+    background: #FFFFFF15;
+    margin: 3em 0;
+    border-radius: 1em;
+}
+
+.WorkCard img {
+    width: 100%;
+    height: 35vh;
+    border-radius: 1em;
+}
+
+.cardInfo {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin: 0 2em;
+    padding: 1.5em 0;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.title {
+    font-size: 1.7em;
+    color: #E4E4E4;
+    font-family: 'Bree Serif', serif;
+}
+
+.description {
+    width: 100%;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagList span {
+    background-color: #E1372C;
+    padding: 0.3em 0.5em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    margin: 0 0.8em;
+}
+
+.tagList span:first-child {
+    margin: 0 0;
+}
+
+.WorkCard button {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    margin-top: 1.5em;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #292828BB;
+    border-radius: 0.5em;
+    color: white;
+}

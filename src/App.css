@@ -1,0 +1,11 @@
+.wrapper {
+    padding: 2em;
+    position: absolute;
+    top: 0;
+}
+
+.sectionTitle {
+    color: #E1372C;
+    font-size: 2em;
+    text-shadow: 0 2px 2px #00000040; 
+}

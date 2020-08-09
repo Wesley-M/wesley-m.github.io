@@ -5,12 +5,12 @@ import SkillSection from './skills/SkillSection'
 import ContactSection from './contacts/ContactSection'
 import TabbedMenu from './navigation/TabbedMenu'
 
-import styles from './App.module.css'
+import './App.css'
 
 function App() {
   return (
-    <div className={styles.App}>
-      <div className={styles.wrapper}>
+    <div className="App">
+      <div className="wrapper">
         <HeroSection />
         <WorkSection />
         <SkillSection />

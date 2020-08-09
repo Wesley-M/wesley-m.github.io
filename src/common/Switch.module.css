@@ -1,0 +1,42 @@
+.Switch {
+    width: 4em;
+    height: 1.4em;;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    background-color: #65606029;
+    transition: 300ms background;
+}
+
+.slider {
+    width: 2.1em;
+    height: inherit;
+    position: absolute;
+    border-radius: 15px;
+    transition: 300ms left ease-in-out;
+    background-color: #E1372C;
+}
+
+.turnOption {
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.turnOptionImg {
+    height: 100%;
+}
+
+.turnOptionImg:hover {
+    cursor: pointer;
+}
+
+.turnOn {
+    left: 0;
+}
+
+.turnOff {
+    left: 2em;
+}

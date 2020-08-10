@@ -1,5 +1,6 @@
 .wrapper {
-    padding: 2em;
+    margin-bottom: 5em;
+    padding: 1.5em;
     position: absolute;
     top: 0;
 }
@@ -8,4 +9,6 @@
     color: #E1372C;
     font-size: 2em;
     text-shadow: 0 2px 2px #00000040; 
+    letter-spacing: 0.05em;
+    margin-top: 2em;
 }

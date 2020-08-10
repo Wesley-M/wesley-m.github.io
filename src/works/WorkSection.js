@@ -9,7 +9,7 @@ import styles from "./WorkSection.module.css"
 
 function WorkSection() {
     return (
-        <section className={styles.WorkSection}>
+        <section className={styles.WorkSection} id="works">
             <h1 className="sectionTitle">My Works</h1>
             <div className={styles.cardList}>
                 <WorkCard 
@@ -21,14 +21,14 @@ function WorkSection() {
                     tags={["javascript", "game"]} 
                 />
                 <WorkCard 
-                    img={im1} 
+                    img={im2} 
                     title="Lorem" 
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Eg vestibulum aliquam, venenatis, feugiat."
                     tags={["javascript", "literature"]} 
                 />
                 <WorkCard 
-                    img={im1} 
+                    img={im3} 
                     title="Lorem Ipsum" 
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     tags={["javascript", "classic"]} 

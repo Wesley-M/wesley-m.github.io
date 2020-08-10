@@ -13,7 +13,7 @@ import styles from './HeroSection.module.css'
 
 function HeroSection() {
     return (
-        <section className={styles.heroContainer}>
+        <section className={styles.heroContainer} id="home">
             <Navbar />
 
             <h1 className={styles.title}> 

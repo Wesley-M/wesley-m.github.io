@@ -1,12 +1,12 @@
 .Switch {
     width: 4em;
-    height: 1.4em;;
+    height: 1.4em;
     border-radius: 2em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    background-color: #65606029;
+    background-color: #60606029;
     transition: 300ms background;
 }
 

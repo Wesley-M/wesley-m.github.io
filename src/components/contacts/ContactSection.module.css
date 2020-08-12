@@ -11,8 +11,8 @@
 .contactForm input, .contactForm textarea {
     width: 100%;
     padding: 0.5em;
-    border-radius: 0.3em;
-    border: 3px solid #C6C6C6;
+    border-radius: 0.6em;
+    font-family: 'Nunito', sans-serif;
 }
 
 .contactForm p {
@@ -20,8 +20,6 @@
 }
 
 .contactForm button {
-    background-color: #E1372C;
-    color: white;
     border: none;
     border-radius: 2em;
     width: 80%;
@@ -32,6 +30,6 @@
 }
 
 .contactForm input:focus, .contactForm textarea:focus {
-    border: 3px solid #000000;
+    border: 3px solid #000000a4;
     outline: none;
 }

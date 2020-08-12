@@ -10,16 +10,10 @@
     justify-content: center;
     display: flex;
     align-items: center;
-    background-color: #E1372C30;
-    color: white;
     width: 2.5em;
     height: 2.5em;
     border-radius: 1.25em;
     margin: 0 0.3em;
-}
-
-.pagination span:first-child {
-    background-color: #E1372C;
 }
 
 .pagination span:last-child {

@@ -1,6 +1,5 @@
 .WorkCard {
     width: 100%;
-    background: #FFFFFF15;
     margin: 3em 0;
     border-radius: 1em;
 }
@@ -17,13 +16,11 @@
     position: relative;
     margin: 0 1em;
     padding: 1.5em 0;
-    color: white;
     font-family: 'Nunito', sans-serif;
 }
 
 .title {
     font-size: 1.7em;
-    color: #E4E4E4;
     font-family: 'Bree Serif', serif;
 }
 
@@ -37,7 +34,6 @@
 }
 
 .tagList span {
-    background-color: #E1372C;
     padding: 0.3em 0.5em;
     font-weight: bold;
     border-radius: 0.3em;
@@ -56,7 +52,6 @@
     border: none;
     font-weight: bold;
     font-size: 1em;
-    background-color: #292828BB;
     border-radius: 0.5em;
-    color: white;
+    color: inherit;
 }

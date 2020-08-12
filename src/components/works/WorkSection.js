@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import WorkCard from './WorkCard'
 
-import im1 from '../assets/images/im1.png'
-import im2 from '../assets/images/im2.png'
-import im3 from '../assets/images/im3.png'
+import im1 from '../../static/images/im1.png'
+import im2 from '../../static/images/im2.png'
+import im3 from '../../static/images/im3.png'
+
+import {ThemeContext} from '../../contexts/ThemeContext'
+import { addOpacity } from '../../utils/styles'
 
 import styles from "./WorkSection.module.css"
 
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
 function WorkSection() {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
         <section className={styles.WorkSection} id="works">
             <h1 className="sectionTitle">My Works</h1>
@@ -34,13 +43,25 @@ function WorkSection() {
                     tags={["javascript", "classic"]} 
                 />
             </div>
-            <div className={styles.pagination}>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
+            <div className={styles.pagination} css={getPaginationColor(theme)}>
+                <span css={getPageColor(theme, 40)}>1</span>
+                <span css={getPageColor(theme, 40)}>2</span>
+                <span css={getPageColor(theme, 40)}>3</span>
             </div>
         </section>
     )
+}
+
+function getPaginationColor(theme, opacity = 100) {
+    return {
+        color: addOpacity(theme.contentForeColor)
+    }
+}
+
+function getPageColor(theme, opacity = 100) {
+    return {
+        backgroundColor: addOpacity(theme.headerForeColor, opacity)
+    }
 }
 
 export default WorkSection

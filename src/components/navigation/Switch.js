@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import {ThemeContext} from '../../contexts/ThemeContext'
+import {addOpacity} from '../../utils/styles'
 
 import styles from './Switch.module.css'
+
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 
 /**
  * Component for switching between defined actions
  *
  * @component
- * @example
- * const age = 21
- * const name = 'Jitendra Nirnejak'
- * return (
- *   <User age={age} name={name} />
- * )
  */
 
 const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
   const [selected, setSelected] = useState('turned-off');
 
-  /**
-   * return full name of the user
-   * @return  {string}            Fullname of the user
-   */
+  const {theme} = useContext(ThemeContext)
+
   function getSliderClasses() {
     let sliderClasses = [styles.slider];
     sliderClasses.push(
@@ -31,12 +29,6 @@ const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
     return sliderClasses
   }
 
-  /**
-   * return full name of the user
-   * @param   {string} firstName  First Name of the User
-   * @param   {string} lastName   Last Name of the User
-   * @return  {string}            Fullname of the user
-   */
   function clickHandler() {
     const newSliderPosition = (selected === 'turned-on') ? 'turned-off' : 'turned-on';
     setSelected(newSliderPosition);
@@ -48,23 +40,40 @@ const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
   }
 
   return (
-      <div className={styles.Switch}>
+      <div className={styles.Switch} css={getSwitchColor(theme, 50)}>
           <span className={styles.turnOption} onClick={clickHandler}>
             <img 
-                src={turnOnImg} 
-                className={styles.turnOptionImg}
-                alt="turn-on"/>
+              src={turnOnImg} 
+              className={styles.turnOptionImg}
+              alt="turn-on"/>
           </span>
+
           <span className={styles.turnOption} onClick={clickHandler}>
             <img 
-                src={turnOffImg} 
-                className={styles.turnOptionImg} 
-                alt="turn-off"/>
+              src={turnOffImg} 
+              className={styles.turnOptionImg} 
+              alt="turn-off"/>
           </span> 
-          <span className={getSliderClasses().join(' ')} onClick={clickHandler}>
+
+          <span 
+            className={getSliderClasses().join(' ')}
+            css={getSliderColor(theme)} 
+            onClick={clickHandler}>
           </span>
       </div>
   );
+}
+
+function getSwitchColor(theme, opacity = 100) {
+  return {
+    backgroundColor: addOpacity(theme.light, opacity)
+  }
+}
+
+function getSliderColor(theme, opacity = 100) {
+  return {
+    backgroundColor: addOpacity(theme.headerForeColor, opacity)
+  }
 }
 
 export default Switch;

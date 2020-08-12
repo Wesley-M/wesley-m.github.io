@@ -1,11 +1,11 @@
 import React from 'react'
-import Switch from '../common/Switch'
+import Switch from './Switch'
 import styles from './Navbar.module.css'
 
-import usaIcon from '../assets/icons/usa-flag.svg'
-import brazilIcon from '../assets/icons/brazil-flag.svg'
-import moonIcon from '../assets/icons/moon.svg'
-import sunIcon from '../assets/icons/sun.svg'
+import usaIcon from '../../static/icons/usa-flag.svg'
+import brazilIcon from '../../static/icons/brazil-flag.svg'
+import moonIcon from '../../static/icons/moon.svg'
+import sunIcon from '../../static/icons/sun.svg'
 
 function Navbar() {
     return (

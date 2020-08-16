@@ -7,12 +7,12 @@
     margin: 0;
     font-weight: normal;
     margin-top: 0.7em;
-    font-size: 3.4em;
+    font-size: 3.5em;
     line-height: 1.3em;
 }
 
 .profession {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin: 0;
     margin-top: 1em;
 }
@@ -22,15 +22,16 @@
 }
 
 .briefDescription {
-    margin-top: 1em;
-    font-size: 1em;
+    margin-top: 1.2em;
+    font-size: 1.1em;
 }
 
 .callToActions {
-    margin-top: 1.5em;
+    margin-top: 2em;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-right: 1em;
 }
 
 .callToActions button {
@@ -39,7 +40,7 @@
     border: none;
     padding: 1em;
     border-radius: 0.6em;
-    width: 48%;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,36 +1,21 @@
-import React from 'react'
-
-import {ReactComponent as ES6} from '../../static/icons/skills/es6.svg'
-import {ReactComponent as Java} from '../../static/icons/skills/java.svg'
-import {ReactComponent as Python} from '../../static/icons/skills/python.svg'
-import {ReactComponent as CPlusPlus} from '../../static/icons/skills/c++.svg'
-import {ReactComponent as HTML} from '../../static/icons/skills/html.svg'
-import {ReactComponent as CSS} from '../../static/icons/skills/css.svg'
-import {ReactComponent as REACT} from '../../static/icons/skills/react.svg'
-import {ReactComponent as VSCode} from '../../static/icons/skills/vscode.svg'
-
+import React, { useContext } from 'react'
 import SkillsContainer from './SkillsContainer'
-
 import styles from './SkillSection.module.css'
 
+import {ContentContext} from '../../contexts/ContentContext'
+
 function SkillSection() {
+
+    const {content} = useContext(ContentContext)
+
+    const skillsContainers = content.skills.cards.map(skill => (
+        <SkillsContainer key={skill.id} type={skill.type} skills={skill.images} />
+    )) 
+
     return (
         <section className={styles.SkillSection} id="skills">
-            <h1 className="sectionTitle">Skills</h1>
-            <SkillsContainer type="LANGUAGES">
-                <ES6 />
-                <Java />
-                <Python />
-                <CPlusPlus />
-                <HTML/>
-                <CSS />
-            </SkillsContainer>
-            <SkillsContainer type="FRAMEWORKS">
-                <REACT />
-            </SkillsContainer>
-            <SkillsContainer type="TOOLS">
-                <VSCode />
-            </SkillsContainer>
+            <h1 className="sectionTitle">{content.skills.sectionTitle}</h1>
+            {skillsContainers}
         </section>
     )
 }

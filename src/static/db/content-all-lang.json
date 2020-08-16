@@ -1,0 +1,166 @@
+{
+    "pt-br": {
+        "hero": {
+            "slogan": "Vamos criar um sistema",
+            "slogan-options": ["fantástico.", "incrível.", "único."],
+            "profession": "Desenvolvedor web fullstack",
+            "briefDescription": "Bem vindo! Eu sou um desenvolvedor baseado em Campina Grande (Brasil) que ama construir experiências memoráveis. Vamos ver o meu trabalho ?"
+        },
+        "skills": {
+            "sectionTitle": "Habilidades",
+            "cards": [
+                {
+                    "id": 1,
+                    "type": "LINGUAGENS",
+                    "images": [
+                        "c++.svg",
+                        "css.svg",
+                        "es6.svg",
+                        "html.svg",
+                        "java.svg",
+                        "python.svg"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "type": "FRAMEWORKS",
+                    "images": [
+                        "react.svg"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "type": "FERRAMENTAS",
+                    "images": [
+                        "vscode.svg"
+                    ]
+                }
+            ]
+        },
+        "works": {
+            "sectionTitle": "Meus Trabalhos",
+            "cards": [
+                {
+                    "id": 1,
+                    "title": "Lorem Ipsum",
+                    "image": "im1.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. Suspendisse facilisis nulla quis libero pretium, quis porttitor odio laoreet. ",
+                    "tags": ["javascript", "game"]
+                },
+                {
+                    "id": 2,
+                    "title": "Lorem",
+                    "image": "im2.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. ",
+                    "tags": ["javascript", "literature"]
+                },
+                {
+                    "id": 3,
+                    "title": "Lorem Ipsum",
+                    "image": "im3.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. Suspendisse facilisis. ",
+                    "tags": ["javascript", "classic"]
+                }
+            ],
+            "visit-btn": "VISITE O TRABALHO"
+        },
+        "contacts": {
+            "sectionTitle": "Me Contate",
+            "inputs": {
+                "name": "Nome",
+                "email": "Email",
+                "subject": "Assunto",
+                "message": "Mensagem",
+                "submit": "ENVIAR MENSAGEM"
+            }
+        },
+        "navigation": {
+            "home": "início",
+            "works": "trabalhos",
+            "skills": "habilidades",
+            "contact": "contato"
+        }
+    },
+    "en": {
+        "hero": {
+            "slogan": "Let's create something",
+            "slogan-options": ["awesome.", "greate.", "unique."],
+            "profession": "Fullstack web developer",
+            "briefDescription": "Welcome! I am a developed based in Campina Grande (Brazil) who loves to build awesome  experiences. Let's review my work ?"
+        },
+        "skills": {
+            "sectionTitle": "Skills",
+            "cards": [
+                {
+                    "id": 1,
+                    "type": "LANGUAGES",
+                    "images": [
+                        "c++.svg",
+                        "css.svg",
+                        "es6.svg",
+                        "html.svg",
+                        "java.svg",
+                        "python.svg"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "type": "FRAMEWORKS",
+                    "images": [
+                        "react.svg"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "type": "TOOLS",
+                    "images": [
+                        "vscode.svg"
+                    ]
+                }
+            ]
+        },
+        "works": {
+            "sectionTitle": "My Works",
+            "cards": [
+                {
+                    "id": 1,
+                    "title": "Lorem Ipsum",
+                    "image": "im1.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. Suspendisse facilisis nulla quis libero pretium, quis porttitor odio laoreet. ",
+                    "tags": ["javascript", "game"]
+                },
+                {
+                    "id": 2,
+                    "title": "Lorem",
+                    "image": "im2.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. ",
+                    "tags": ["javascript", "literature"]
+                },
+                {
+                    "id": 3,
+                    "title": "Lorem Ipsum",
+                    "image": "im3.png",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices erat quis justo elementum lacinia. Suspendisse facilisis. ",
+                    "tags": ["javascript", "classic"]
+                }
+            ],
+            "visit-btn": "VISIT WORK"
+        },
+        "contacts": {
+            "sectionTitle": "Contact me",
+            "inputs": {
+                "name": "Name",
+                "email": "Email",
+                "subject": "Subject",
+                "message": "Message",
+                "submit": "SEND MESSAGE"
+            }
+        },
+        "navigation": {
+            "home": "home",
+            "works": "works",
+            "skills": "skills",
+            "contact": "contact"
+        }
+    }
+}

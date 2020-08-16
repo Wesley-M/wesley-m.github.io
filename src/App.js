@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 
 import HeroSection from './components/hero/HeroSection'
 import WorkSection from './components/works/WorkSection'
@@ -10,7 +10,7 @@ import {ThemeContext} from './contexts/ThemeContext'
 import {addOpacity} from './utils/styles'
 
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx, Global } from '@emotion/core'
 
 import './App.css'
 
@@ -21,7 +21,7 @@ function App() {
   setBodyBackgroundColor(theme);
 
   return (
-    <div css={getHeaderForeColor(theme)}>
+    <GlobalStyles theme={theme}>
       <div className="wrapper">
         <HeroSection />
         <WorkSection />
@@ -29,19 +29,30 @@ function App() {
         <ContactSection />
       </div>
       <TabbedMenu />
-    </div>
+    </GlobalStyles>
   );
+}
+
+function GlobalStyles({theme, children}) {
+  return (
+    <div className="app">
+      <Global styles={{
+          '.sectionTitle': {
+            textShadow: `0 2px 2px ${addOpacity(theme.dark, 25)}`
+          },
+          '.wrapper': {
+            color: addOpacity(theme.headerForeColor)
+          }
+        }}
+      />
+      {children}
+    </div>
+  )
 }
 
 function setBodyBackgroundColor(theme, opacity = 100) {
   const body = document.querySelector("body")
   body.style.backgroundColor = addOpacity(theme.mainBackColor, opacity)
-}
-
-function getHeaderForeColor (theme, opacity = 100) {
-  return {
-    color: addOpacity(theme.headerForeColor, opacity)
-  }
 }
 
 export default App;

@@ -1,53 +1,56 @@
-import React, { useContext } from 'react'
-
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {addOpacity} from '../../utils/styles'
-
-import styles from './ContactSection.module.css'
+import { useContext } from 'react'
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
+import styles from './ContactSection.module.css'
+import {ThemeContext} from '../../contexts/ThemeContext'
+import {ContentContext} from '../../contexts/ContentContext'
+import {addOpacity} from '../../utils/styles'
+
 function ContactSection() {
 
     const {theme} = useContext(ThemeContext)
+    const {content} = useContext(ContentContext)
 
     return (
         <section className={styles.ContactSection} id="contact">
-            <h1 className="sectionTitle">Contact me</h1>
+            <h1 className="sectionTitle">{content.contacts.sectionTitle}</h1>
             <form className={styles.contactForm}>
                 <label>
-                    <p>Name:</p>
-                    <input type="text" name="name" css={getInputBorder(theme, 60)} />
+                    <p>{content.contacts.inputs.name}:</p>
+                    <input type="text" name="name" css={inlineStyles(theme).input} />
                 </label>
                 <label>
-                    <p>Email:</p>
-                    <input type="email" name="email" css={getInputBorder(theme, 60)} />
+                    <p>{content.contacts.inputs.email}:</p>
+                    <input type="email" name="email" css={inlineStyles(theme).input} />
                 </label>
                 <label>
-                    <p>Subject:</p>
-                    <input type="subject" name="subject" css={getInputBorder(theme, 60)} />
+                    <p>{content.contacts.inputs.subject}:</p>
+                    <input type="subject" name="subject" css={inlineStyles(theme).input} />
                 </label>
                 <label>
-                    <p>Message:</p>
-                    <textarea css={getInputBorder(theme, 60)} />
+                    <p>{content.contacts.inputs.message}:</p>
+                    <textarea css={inlineStyles(theme).input} />
                 </label>
-                <button css={getButtonColors(theme)}>SEND MESSAGE</button>
+                <button css={inlineStyles(theme).button}>{content.contacts.inputs.submit}</button>
             </form>
         </section>
     )
 }
 
-function getInputBorder(theme, opacity = 100) {
+const inlineStyles = (theme) => {
     return {
-        border: `3px solid ${addOpacity(theme.light)}`
-    }
-}
-
-function getButtonColors(theme, opacity = 100) {
-    return {
-        backgroundColor: addOpacity(theme.headerForeColor),
-        color: addOpacity(theme.contentForeColor)
+        input: {
+            border: `2px solid ${addOpacity(theme.light, 60)}`,
+            '&:focus': {
+                border: `3px solid ${addOpacity(theme.dark, 60)}`
+            }
+        },
+        button: {
+            backgroundColor: theme.headerForeColor,
+            color: theme.contentForeColor
+        }
     }
 }
 

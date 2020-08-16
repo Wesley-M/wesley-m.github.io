@@ -1,18 +1,11 @@
-import React, { useState, useContext } from 'react';
-
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {addOpacity} from '../../utils/styles'
-
-import styles from './Switch.module.css'
+import { useState, useContext } from 'react';
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-/**
- * Component for switching between defined actions
- *
- * @component
- */
+import styles from './Switch.module.css'
+import {ThemeContext} from '../../contexts/ThemeContext'
+import {addOpacity} from '../../utils/styles'
 
 const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
   const [selected, setSelected] = useState('turned-off');
@@ -22,9 +15,9 @@ const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
   function getSliderClasses() {
     let sliderClasses = [styles.slider];
     sliderClasses.push(
-      (selected === 'turned-on') ? 
-      styles.turnOn : 
-      styles.turnOff
+      (selected === 'turned-on') 
+        ? styles.turnOn 
+        : styles.turnOff
     )
     return sliderClasses
   }
@@ -33,14 +26,17 @@ const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
     const newSliderPosition = (selected === 'turned-on') ? 'turned-off' : 'turned-on';
     setSelected(newSliderPosition);
     if (selected === 'turned-on') { 
+      console.log("on")
       turnOnAction()
     } else { 
+      console.log("off")
+      console.log(turnOffAction)
       turnOffAction() 
     }
   }
 
   return (
-      <div className={styles.Switch} css={getSwitchColor(theme, 50)}>
+      <div className={styles.Switch} css={inlineStyles(theme).switch}>
           <span className={styles.turnOption} onClick={clickHandler}>
             <img 
               src={turnOnImg} 
@@ -57,22 +53,21 @@ const Switch = ({ turnOnImg, turnOffImg, turnOnAction, turnOffAction }) => {
 
           <span 
             className={getSliderClasses().join(' ')}
-            css={getSliderColor(theme)} 
+            css={inlineStyles(theme).slider} 
             onClick={clickHandler}>
           </span>
       </div>
   );
 }
 
-function getSwitchColor(theme, opacity = 100) {
+const inlineStyles = (theme) => {
   return {
-    backgroundColor: addOpacity(theme.light, opacity)
-  }
-}
-
-function getSliderColor(theme, opacity = 100) {
-  return {
-    backgroundColor: addOpacity(theme.headerForeColor, opacity)
+    switch: {
+      backgroundColor: addOpacity(theme.light, 50)
+    },
+    slider: {
+      backgroundColor: addOpacity(theme.headerForeColor, 100)
+    }
   }
 }
 

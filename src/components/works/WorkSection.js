@@ -1,66 +1,54 @@
-import React, { useContext } from 'react'
-import WorkCard from './WorkCard'
-
-import im1 from '../../static/images/im1.png'
-import im2 from '../../static/images/im2.png'
-import im3 from '../../static/images/im3.png'
-
-import {ThemeContext} from '../../contexts/ThemeContext'
-import { addOpacity } from '../../utils/styles'
-
-import styles from "./WorkSection.module.css"
+import { useContext } from 'react'
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
+import WorkCard from './WorkCard'
+
+import styles from "./WorkSection.module.css"
+import { addOpacity } from '../../utils/styles'
+
+import {ThemeContext} from '../../contexts/ThemeContext'
+import {ContentContext} from '../../contexts/ContentContext'
+
 function WorkSection() {
 
     const {theme} = useContext(ThemeContext)
+    const {content} = useContext(ContentContext)
+
+    const cards = content.works.cards.map(work => (
+        <WorkCard 
+            key={work.id}
+            img={work.image} 
+            title={work.title} 
+            description={work.description}
+            tags={work.tags} 
+        />
+    ))
 
     return (
         <section className={styles.WorkSection} id="works">
-            <h1 className="sectionTitle">My Works</h1>
+            <h1 className="sectionTitle">{content.works.sectionTitle}</h1>
             <div className={styles.cardList}>
-                <WorkCard 
-                    img={im1} 
-                    title="Lorem Ipsum" 
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Eg vestibulum aliquam, venenatis, feugiat. Hac ac in sociis 
-                                etiam vitae, ultrices semper. Risus vitae tincidunt libero."
-                    tags={["javascript", "game"]} 
-                />
-                <WorkCard 
-                    img={im2} 
-                    title="Lorem" 
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Eg vestibulum aliquam, venenatis, feugiat."
-                    tags={["javascript", "literature"]} 
-                />
-                <WorkCard 
-                    img={im3} 
-                    title="Lorem Ipsum" 
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                    tags={["javascript", "classic"]} 
-                />
+                {cards}
             </div>
-            <div className={styles.pagination} css={getPaginationColor(theme)}>
-                <span css={getPageColor(theme, 40)}>1</span>
-                <span css={getPageColor(theme, 40)}>2</span>
-                <span css={getPageColor(theme, 40)}>3</span>
+            <div className={styles.pagination} css={inlineStyles(theme).pagination}>
+                <span css={inlineStyles(theme).page}>1</span>
+                <span css={inlineStyles(theme).page}>2</span>
+                <span css={inlineStyles(theme).page}>3</span>
             </div>
         </section>
     )
 }
 
-function getPaginationColor(theme, opacity = 100) {
+const inlineStyles = (theme) => {
     return {
-        color: addOpacity(theme.contentForeColor)
-    }
-}
-
-function getPageColor(theme, opacity = 100) {
-    return {
-        backgroundColor: addOpacity(theme.headerForeColor, opacity)
+        pagination: {
+            color: theme.contentForeColor
+        },
+        page: {
+            backgroundColor: addOpacity(theme.headerForeColor, 40)
+        }
     }
 }
 

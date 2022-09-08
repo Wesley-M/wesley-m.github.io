@@ -1,52 +1,61 @@
 import React, { useContext } from 'react'
-import Switch from './Switch'
-import styles from './Navbar.module.css'
-
-import enIcon from '../../static/icons/en.svg'
-import ptIcon from '../../static/icons/pt.svg'
-import moonIcon from '../../static/icons/moon.svg'
-import sunIcon from '../../static/icons/sun.svg'
 
 import {ThemeContext} from '../../contexts/ThemeContext'
 import {ContentContext} from '../../contexts/ContentContext'
+import LanguageSelector from "./LanguageSelector";
+import {AppBar, Box, Button, styled, Toolbar} from "@mui/material";
+import {Link} from "react-router-dom";
 
 function Navbar() {
 
-    const { toggleTheme } = useContext(ThemeContext)
-    const { toggleLanguage } = useContext(ContentContext)
+  const Logo = styled(Link)(() => ({
+    fontWeight: 800,
+    fontSize: '1.1em',
+    textDecoration: 'none',
+    color: '#E1372C',
+    fontFamily: 'Nunito, sans-serif'
+  }));
 
-    return (
-        <nav className={styles.navbar}>
-            <span className={styles.logo}>
-                Wesley Santos
-            </span>
-            
-            <ul className={styles.generalNavigation}>
-                <li> <a href="#">SKILLS</a> </li>
-                <li> <a href="#">WORKS</a> </li>
-                <li> <a href="#">CONTACTS</a> </li>
-            </ul>
+  const NavLink = styled(Button)(() => ({
+    color: '#282828',
+    fontWeight: 'bold',
+    fontFamily: 'Nunito, sans-serif'
+  }));
 
-            <ul className={styles.switchNavigation}>
-                <li> 
-                    <Switch 
-                        turnOnImg={enIcon} 
-                        turnOffImg={ptIcon} 
-                        turnOnAction={toggleLanguage}
-                        turnOffAction={toggleLanguage}  
-                    /> 
-                </li>
-                <li> 
-                    <Switch 
-                        turnOnImg={moonIcon} 
-                        turnOffImg={sunIcon} 
-                        turnOnAction={toggleTheme}
-                        turnOffAction={toggleTheme} 
-                    />
-                </li>
-            </ul>
-        </nav>
-    )
+  const { toggleTheme } = useContext(ThemeContext)
+  const { contentId, toggleLanguage } = useContext(ContentContext)
+
+  return (
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+            sx={{ backgroundColor: 'white', color: 'red' }}
+            position="fixed"
+            elevation={0}
+        >
+          <Toolbar sx={{ margin: '0 10%' }}>
+            <Logo to="/">
+              Wesley Santos
+            </Logo>
+
+            <Box sx={{ flexGrow: 16 }} />
+
+            <Link to="/blog" style={{ textDecoration: 'none' }}>
+              <NavLink>Blog</NavLink>
+            </Link>
+            <NavLink href="/#works">Works</NavLink>
+            <NavLink href="/#skills">Skills</NavLink>
+            <NavLink href="/#contact">Contact</NavLink>
+
+            <Box sx={{ flexGrow: 1 }} />
+
+            <LanguageSelector
+                language={contentId}
+                toggleLanguage={toggleLanguage}
+            />
+          </Toolbar>
+        </AppBar>
+      </Box>
+  );
 }
 
 export default Navbar

@@ -1,19 +1,16 @@
-import {useContext} from 'react'
+import { useContext } from 'react';
 
-/** @jsx jsx */
-import {jsx} from '@emotion/core'
+import AssignmentIndex from '@mui/icons-material/AssignmentInd';
+import Computer from '@mui/icons-material/Computer';
+import Home from '@mui/icons-material/Home';
+import Work from '@mui/icons-material/Work';
 
-import AssignmentIndex from '@material-ui/icons/AssignmentInd';
-import Computer from '@material-ui/icons/Computer';
-import Home from '@material-ui/icons/Home';
-import Work from '@material-ui/icons/Work';
+import Scroll from '../../utils/components/Scroll';
 
-import Scroll from '../../utils/components/Scroll'
+import { ContentContext } from '../../contexts/ContentContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {ContentContext} from '../../contexts/ContentContext'
-
-import styles from './TabbedMenu.module.css'
+import styles from './TabbedMenu.module.css';
 
 function TabbedMenu() {
   const {theme} = useContext(ThemeContext)

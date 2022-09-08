@@ -1,12 +1,10 @@
 import { useContext } from 'react'
 
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
+import { ContentContext } from '../../contexts/ContentContext'
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { addOpacity } from '../../utils/styles'
 import styles from './ContactSection.module.css'
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {ContentContext} from '../../contexts/ContentContext'
-import {addOpacity} from '../../utils/styles'
+import {Button, TextField} from "@mui/material";
 
 function ContactSection() {
 
@@ -14,44 +12,52 @@ function ContactSection() {
     const {content} = useContext(ContentContext)
 
     return (
-        <section className={styles.ContactSection} id="contact">
+        <section id="contact">
             <h1 className="sectionTitle">{content.contacts.sectionTitle}</h1>
             <form className={styles.contactForm}>
                 <label>
                     <p>{content.contacts.inputs.name}:</p>
-                    <input type="text" name="name" css={inlineStyles(theme).input} />
+                    <TextField
+                        label="Poderia me informar seu nome ?"
+                        name="name"
+                        variant="outlined"
+                        fullWidth
+                    />
                 </label>
                 <label>
                     <p>{content.contacts.inputs.email}:</p>
-                    <input type="email" name="email" css={inlineStyles(theme).input} />
+                    <TextField
+                        label="Vou precisar do seu email"
+                        name="email"
+                        variant="outlined"
+                        fullWidth
+                    />
                 </label>
                 <label>
                     <p>{content.contacts.inputs.subject}:</p>
-                    <input type="subject" name="subject" css={inlineStyles(theme).input} />
+                    <TextField
+                        label="Qual o assunto ?"
+                        name="subject"
+                        variant="outlined"
+                        fullWidth
+                    />
                 </label>
                 <label>
                     <p>{content.contacts.inputs.message}:</p>
-                    <textarea css={inlineStyles(theme).input} />
+                    <TextField
+                        label="Sua mensagem vai aqui"
+                        variant="outlined"
+                        name="message"
+                        multiline
+                        fullWidth
+                    />
                 </label>
-                <button css={inlineStyles(theme).button}>{content.contacts.inputs.submit}</button>
+                <Button type="submit">
+                    {content.contacts.inputs.submit}
+                </Button>
             </form>
         </section>
     )
-}
-
-const inlineStyles = (theme) => {
-    return {
-        input: {
-            border: `2px solid ${addOpacity(theme.light, 60)}`,
-            '&:focus': {
-                border: `3px solid ${addOpacity(theme.dark, 60)}`
-            }
-        },
-        button: {
-            backgroundColor: theme.headerForeColor,
-            color: theme.contentForeColor
-        }
-    }
 }
 
 export default ContactSection

@@ -9,17 +9,6 @@
     font-family: 'Nunito', sans-serif;
 }
 
-.switchNavigation {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.switchNavigation li {
-    margin: 0 0.5em;
-}
-
 .generalNavigation {
     display: none;
 }

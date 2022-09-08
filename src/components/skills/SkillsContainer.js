@@ -1,12 +1,9 @@
 import { useContext } from "react"
 
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {addOpacity} from '../../utils/styles'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 import styles from "./SkillsContainer.module.css"
-
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import {Box, Grid, Stack, styled, Typography} from "@mui/material";
 
 const imagesContext = require.context('../../static/icons/skills', true)
 
@@ -14,27 +11,32 @@ function SkillsContainer({ type, skills }) {
 
     const {theme} = useContext(ThemeContext)
 
-    const imgs = skills.map(src => (
-        <img src={imagesContext(`./${src}`)} alt=""/>
+    const items = skills.map(src => (
+        <img src={imagesContext(`./${src}`)} style={{ margin: '1em 1em 0 0' }} alt=""/>
     ))
 
-    return (
-        <div className={styles.SkillsContainer} css={inlineStyles(theme).skillsContainer}>
-            <p className={styles.skillType}>{type}</p>
-            <div className={styles.skills}>
-                {imgs}
-            </div>
-        </div>
-    )
-}
+    const Container = styled(Box)(() => ({
+      margin: '2em 0',
+      minWidth: '300px'
+    }));
 
-const inlineStyles = (theme) => {
-    return {
-        skillsContainer: {
-            boxShadow: `-2px -2px 5px ${addOpacity(theme.light, 30)},
-                        2px 2px 5px ${addOpacity(theme.dark, 30)}`
-        }
-    }
+    const SkillType = styled(Typography)(() => ({
+      fontFamily: 'Nunito, sans-serif',
+      fontWeight: 800,
+      fontSize: '1.2em',
+      marginTop: '1.5em',
+      marginBottom: '1em',
+      color: '#E1372C'
+    }));
+
+    return (
+        <Container>
+            <SkillType>{type}</SkillType>
+            <Box>
+                {items}
+            </Box>
+        </Container>
+    )
 }
 
 export default SkillsContainer

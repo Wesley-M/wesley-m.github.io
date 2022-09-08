@@ -1,58 +1,52 @@
-import {useContext} from 'react';
+import React, { useContext } from 'react';
 
-import HeroSection from './components/hero/HeroSection'
-import WorkSection from './components/works/WorkSection'
-import SkillSection from './components/skills/SkillSection'
-import ContactSection from './components/contacts/ContactSection'
-import TabbedMenu from './components/navigation/TabbedMenu'
+import ContactSection from './components/contacts/ContactSection';
+import HeroSection from './components/hero/HeroSection';
+import SkillSection from './components/skills/SkillSection';
+import WorkSection from './components/works/WorkSection';
 
-import {ThemeContext} from './contexts/ThemeContext'
-import {addOpacity} from './utils/styles'
-
-/** @jsx jsx */
-import { jsx, Global } from '@emotion/core'
-
-import './App.css'
+import './App.css';
+import {Box, styled} from "@mui/material";
+import Navbar from "./components/navigation/Navbar";
+import Background from "./static/images/background.jpg";
 
 function App() {
-  
-  const {theme} = useContext(ThemeContext)
 
-  setBodyBackgroundColor(theme);
+  const Wrapper = styled(Box)(({ theme }) => ({
+    marginBottom: '5em',
+    padding: '1.5em',
+    top: 0,
+    width: '80%',
+    margin: '0 10%'
+  }))
+
+  const BackgroundBox = styled(Box)(() => ({
+    "&::before": {
+      backgroundImage: `url(${Background})`,
+      backgroundSize: 'cover',
+      content: '""',
+      display: 'block',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: -2,
+      opacity: 0.15
+    }
+  }));
 
   return (
-    <GlobalStyles theme={theme}>
-      <div className="wrapper">
-        <HeroSection />
-        <WorkSection />
-        <SkillSection />
-        <ContactSection />
-      </div>
-      <TabbedMenu />
-    </GlobalStyles>
+      <BackgroundBox>
+        <Navbar/>
+        <Wrapper>
+          <HeroSection />
+          <WorkSection />
+          <SkillSection />
+          <ContactSection />
+        </Wrapper>
+      </BackgroundBox>
   );
-}
-
-function GlobalStyles({theme, children}) {
-  return (
-    <div className="app">
-      <Global styles={{
-          '.sectionTitle': {
-            textShadow: `0 2px 2px ${addOpacity(theme.dark, 25)}`
-          },
-          '.wrapper': {
-            color: addOpacity(theme.headerForeColor)
-          }
-        }}
-      />
-      {children}
-    </div>
-  )
-}
-
-function setBodyBackgroundColor(theme, opacity = 100) {
-  const body = document.querySelector("body")
-  body.style.backgroundColor = addOpacity(theme.mainBackColor, opacity)
 }
 
 export default App;

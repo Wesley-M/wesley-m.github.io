@@ -1,67 +1,120 @@
-import { useContext } from 'react'
+import {useContext} from 'react'
 
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
-import Navbar from '../navigation/Navbar'
 import Typed from './Typed'
 
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import ViewListIcon from '@material-ui/icons/ViewList'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import MessageIcon from '@mui/icons-material/Message';
 import {ReactComponent as ArrowIcon} from '../../static/icons/Arrow.svg'
 
-import styles from './HeroSection.module.css'
-import { addOpacity } from '../../utils/styles'
-
-import {ThemeContext} from '../../contexts/ThemeContext'
 import {ContentContext} from '../../contexts/ContentContext'
+import {ThemeContext} from '../../contexts/ThemeContext'
+import {Box, Button, IconButton, Stack, styled, Typography} from "@mui/material";
 
 function HeroSection() {
 
-    const {theme} = useContext(ThemeContext)
-    const {content} = useContext(ContentContext)
+  const {theme} = useContext(ThemeContext)
+  const {content} = useContext(ContentContext)
 
-    return (
-        <section className={styles.heroContainer} id="home">
-            <Navbar />
+  const HeroContainer = styled(Box)(() => ({
+    width: '100%',
+    height: '100vh',
+    marginTop: '5em',
+    position: 'relative'
+  }));
 
-            <h1 className={styles.title}> 
-                {content.hero["slogan"]} 
-                <Typed dataText={content.hero["slogan-options"]}  />
-            </h1>
+  const Slogan = styled(Typography)(() => ({
+    margin: 0,
+    color: '#E1372C',
+    fontWeight: 'normal',
+    marginTop: '0.7em',
+    fontSize: '5em',
+    lineHeight: '1.2em',
+    fontFamily: 'Bree Serif'
+  }));
 
-            <p className={styles.profession} css={inlineStyles(theme).profession}> 
-                <ArrowIcon />
-                {content.hero["profession"]}
-            </p>
-
-            <p className={styles.briefDescription} css={inlineStyles(theme).description}>
-                {content.hero["briefDescription"]}
-            </p>
-
-            <div className={styles.callToActions}>
-                <button css={inlineStyles(theme).button}> <ViewListIcon /> Curriculum </button>
-                <button css={inlineStyles(theme).button}> <GitHubIcon /> </button>
-                <button css={inlineStyles(theme).button}> <LinkedInIcon /> </button>
-            </div>
-        </section>
-    )
-}
-
-const inlineStyles = (theme) => {
-    return {
-        profession: {
-            color: addOpacity(theme.contentForeColor, 85)
-        },
-        description: {
-            color: addOpacity(theme.contentForeColor, 60)
-        },
-        button: {
-            color: addOpacity(theme.contentForeColor),
-            backgroundColor: addOpacity(theme.contentForeColor, 20)
-        }
+  const Profession = styled(Typography)(() => ({
+    fontSize: '1.2em',
+    margin: 0,
+    marginTop: '1em',
+    color: '#383838',
+    '& .arrow': {
+      width: '2.5em',
+      height: '1.6em',
     }
+  }));
+
+  const SocialIcon = styled(IconButton)(() => ({
+    backgroundColor: "#282828",
+    color: 'white'
+  }));
+
+  const Description = styled(Typography)(() => ({
+    marginTop: '2em',
+    marginBottom: '1.5em',
+    fontSize: '1.1em',
+    fontFamily: 'Nunito, sans-serif',
+    opacity: 0.6
+  }));
+
+  return (
+      <HeroContainer id="home">
+        <Slogan>
+          {content.hero["slogan"]}
+          <Typed dataText={content.hero["slogan-options"]}/>
+        </Slogan>
+
+        <Profession>
+          <Stack direction="row" gap={2} sx={{alignItems: 'center'}}>
+            <Stack direction="row" gap={1} sx={{alignItems: 'center'}}>
+              <ArrowIcon className="arrow"/>
+              <Typography
+                  sx={{
+                    fontFamily: 'Bree Serif',
+                    fontSize: '1.2em'
+                  }}
+              >
+                {content.hero["profession"]}
+              </Typography>
+            </Stack>
+            <Stack direction="row" gap={1}>
+              <SocialIcon aria-label="github" size="small">
+                <GitHubIcon fontSize="small"/>
+              </SocialIcon>
+              <SocialIcon aria-label="linkedin" size="small">
+                <LinkedInIcon fontSize="small"/>
+              </SocialIcon>
+            </Stack>
+          </Stack>
+        </Profession>
+
+        <Description>
+          {content.hero["briefDescription"]}
+        </Description>
+
+        <Stack
+            direction="row"
+            gap={2}
+            sx={{
+              marginTop: '1em'
+            }}
+        >
+          <Button
+              variant="contained"
+              startIcon={<MessageIcon/>}
+              sx={{
+                width: 'fit-content',
+                backgroundColor: '#282828',
+                borderRadius: '5em',
+                textTransform: 'capitalize'
+              }}
+              disableElevation
+          >
+            Let's Talk
+          </Button>
+        </Stack>
+      </HeroContainer>
+  )
 }
 
 export default HeroSection

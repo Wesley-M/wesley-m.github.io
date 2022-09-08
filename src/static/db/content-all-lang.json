@@ -2,7 +2,7 @@
     "pt-br": {
         "hero": {
             "slogan": "Vamos criar um sistema",
-            "slogan-options": ["fantástico.", "incrível.", "único."],
+            "slogan-options": ["fantástico!", "incrível!", "único!"],
             "profession": "Desenvolvedor web fullstack",
             "briefDescription": "Bem vindo! Eu sou um desenvolvedor baseado em Campina Grande (Brasil) que ama construir experiências memoráveis. Vamos ver o meu trabalho ?"
         },
@@ -84,7 +84,7 @@
     "en": {
         "hero": {
             "slogan": "Let's create something",
-            "slogan-options": ["awesome.", "greate.", "unique."],
+            "slogan-options": ["awesome!", "greate!", "unique!"],
             "profession": "Fullstack web developer",
             "briefDescription": "Welcome! I am a developed based in Campina Grande (Brazil) who loves to build awesome  experiences. Let's review my work ?"
         },

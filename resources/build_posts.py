@@ -69,7 +69,7 @@ def get_file_metadadata(p, filename):
                 if header_delimiter_ct >= 2:
                     break
             else:    
-                prop_value = line.split(prop_delimiter)
+                prop_value = line.split(prop_delimiter, 1)
                 
                 # In case it's a not a property, it means we are continuing 
                 # the value of the last prop

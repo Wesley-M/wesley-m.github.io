@@ -14,3 +14,10 @@ body, html {
     letter-spacing: 0.05em;
     margin-top: 2em;
 }
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -2em;
+    visibility: hidden;
+}

@@ -1,17 +1,12 @@
-import { Box, Stack, styled } from "@mui/material";
+import {Box, Grid, Stack, styled} from "@mui/material";
 import { Link } from "react-router-dom";
 import Navbar from "../navigation/Navbar";
 import posts from "./posts/metadata";
+import Card from "../../shared/Card";
+import BottomMenu from "../navigation/BottomMenu";
+import {Wrapper} from "../../shared/Wrapper";
 
 export function BlogList() {
-  const Wrapper = styled(Box)(({ theme }) => ({
-    marginBottom: '5em',
-    padding: '1.5em',
-    top: 0,
-    width: '80%',
-    margin: '0 10%'
-  }))
-
   return (
       <>
         <Navbar/>
@@ -19,17 +14,34 @@ export function BlogList() {
           <Box>
             <h1 className="sectionTitle">Blog</h1>
           </Box>
-          <Stack>
+          <Grid container spacing={{xs: 1, sm: 1, md: 10, lg: 10, xl: 10}}>
             {Object.keys(posts['content']).map((post) => (
-                <Link
-                    key={post}
-                    to={`/blog/${post}`}
+                <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
                 >
-                  {posts['content'][post].title}
-                </Link>
+                  <Link
+                      key={post}
+                      to={`/blog/${post}`}
+                      style={{ textDecoration: "none" }}
+                  >
+                    <Card
+                        imgSrc={posts['content'][post].cover}
+                        title={posts['content'][post].title}
+                        description={posts['content'][post].description}
+                        tags={posts['content'][post].tags.split(',')}
+                        hideAction
+                    />
+                  </Link>
+                </Grid>
             ))}
-          </Stack>
+          </Grid>
         </Wrapper>
+        <BottomMenu/>
       </>
   );
 }

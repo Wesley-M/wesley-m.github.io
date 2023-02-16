@@ -4,18 +4,18 @@ import themes from '../static/db/themes.json'
 const ThemeContext = createContext()
 
 function ThemeProvider(props) {
-    let [themeId, setThemeId] = useState("dark")
-    let [theme, setTheme] = useState(themes["dark"])
+    let [variantId, setVariantId] = useState("dark")
+    let [variant, setVariant] = useState(themes["dark"])
 
-    function toggleTheme () {
-        let newThemeId = (themeId === "dark") ? "light" : "dark"
-        let newTheme = (newThemeId === "dark") ? themes["dark"] : themes["light"]
-        setThemeId(newThemeId)
-        setTheme(newTheme)
+    function toggleVariant () {
+        let newVariantId = (variantId === "dark") ? "light" : "dark"
+        let newTheme = (newVariantId === "dark") ? themes["dark"] : themes["light"]
+        setVariantId(newVariantId)
+        setVariant(newTheme)
     }
 
     return (
-        <ThemeContext.Provider value={{themeId, theme, toggleTheme}}>
+        <ThemeContext.Provider value={{variantId, variant, toggleVariant}}>
             {props.children}
         </ThemeContext.Provider>
     )

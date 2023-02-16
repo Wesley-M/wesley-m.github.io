@@ -19,8 +19,9 @@ function SkillSection() {
 
   return (
       <>
+        <a className='anchor' id='skills'></a>
         <h1 className="sectionTitle">{content.skills.sectionTitle}</h1>
-        <Box id="skills">
+        <Box>
           {skillsContainers}
         </Box>
       </>

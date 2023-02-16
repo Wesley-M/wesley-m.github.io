@@ -9,16 +9,10 @@ import './App.css';
 import {Box, styled} from "@mui/material";
 import Navbar from "./components/navigation/Navbar";
 import Background from "./static/images/background.jpg";
+import BottomMenu from "./components/navigation/BottomMenu";
+import {Wrapper} from "./shared/Wrapper";
 
 function App() {
-
-  const Wrapper = styled(Box)(({ theme }) => ({
-    marginBottom: '5em',
-    padding: '1.5em',
-    top: 0,
-    width: '80%',
-    margin: '0 10%'
-  }))
 
   const BackgroundBox = styled(Box)(() => ({
     "&::before": {
@@ -43,8 +37,9 @@ function App() {
           <HeroSection />
           <WorkSection />
           <SkillSection />
-          <ContactSection />
         </Wrapper>
+        <ContactSection />
+        <BottomMenu/>
       </BackgroundBox>
   );
 }

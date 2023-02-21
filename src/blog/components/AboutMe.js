@@ -1,6 +1,4 @@
 import {Box, Stack, Typography} from "@mui/material";
-import Photo from '../../../static/images/me.jpg'
-
 export const AboutMe = () => {
   return (
       <Stack
@@ -13,14 +11,14 @@ export const AboutMe = () => {
           }}
       >
         <Box>
-          <img
-              src={Photo}
-              style={{
-                width: '5em',
-                height: '5em',
-                borderRadius: '0.25em'
-              }}
-          />
+          {/*<img*/}
+          {/*    src={Photo}*/}
+          {/*    style={{*/}
+          {/*      width: '5em',*/}
+          {/*      height: '5em',*/}
+          {/*      borderRadius: '0.25em'*/}
+          {/*    }}*/}
+          {/*/>*/}
         </Box>
         <Box>
           <Typography

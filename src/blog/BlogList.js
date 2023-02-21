@@ -1,10 +1,10 @@
 import {Box, Grid, Stack, styled} from "@mui/material";
 import { Link } from "react-router-dom";
-import Navbar from "../navigation/Navbar";
+import Navbar from "../components/navigation/Navbar";
 import posts from "./posts/metadata";
-import Card from "../../shared/Card";
-import BottomMenu from "../navigation/BottomMenu";
-import {Wrapper} from "../../shared/Wrapper";
+import Card from "../shared/Card";
+import BottomMenu from "../components/navigation/BottomMenu";
+import {Wrapper} from "../shared/Wrapper";
 
 export function BlogList() {
   return (

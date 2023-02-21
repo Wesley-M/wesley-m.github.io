@@ -1,127 +1,152 @@
-import {useContext} from 'react'
+import {Box, Grid, keyframes, Stack, styled, Typography, useTheme} from "@mui/material";
 
-import Typed from './Typed'
+import { ReactComponent as WavingHandIcon } from '../../images/waving-hand.svg';
 
-import MessageIcon from '@mui/icons-material/Message';
-import {ReactComponent as ArrowIcon} from '../../static/icons/Arrow.svg'
-
-import {ContentContext} from '../../contexts/ContentContext'
-import {ThemeContext} from '../../contexts/ThemeContext'
-import {Box, Button, IconButton, Stack, styled, Typography, useTheme} from "@mui/material";
+import photo from "../../images/me.jpg"
+import Typed from "./Typed";
 
 function HeroSection() {
-
-  const {variant} = useContext(ThemeContext)
-  const {content} = useContext(ContentContext)
   const theme = useTheme();
 
   const HeroContainer = styled(Box)(() => ({
     width: '100%',
-    height: '100vh',
+    height: { xs: '90vh', sm: '60vh', md: '60vh', lg: '40vh' },
     marginTop: '5em',
     position: 'relative'
   }));
 
-  const Slogan = styled(Typography)(() => ({
+  const Name = styled(Typography)(() => ({
+    fontSize: "1.9em",
+    fontFamily: "Nunito, sans-serif",
+    fontWeight: 700
+  }));
+
+  const Occupation = styled(Typography)(() => ({
+    fontSize: "1.4em",
+    fontFamily: "Nunito, sans-serif",
+    fontWeight: 600,
+    color: "#1D7FC6",
+    marginTop: "0.5em"
+  }));
+
+  const Image = styled("img")(() => ({
+    width: "16em",
+    height: "16em",
+    borderRadius: "1em"
+  }));
+
+  const TypedText = styled(Typography)(() => ({
     margin: 0,
-    color: '#282828BB',
-    fontWeight: 'normal',
-    marginTop: '0.7em',
-    fontSize: '5em',
-    lineHeight: '1.2em',
-    fontFamily: 'Bree Serif',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '4em',
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '3.5em',
-    }
-  }));
-
-  const Profession = styled(Typography)(() => ({
-    fontSize: '1.2em',
-    margin: 0,
-    marginTop: '1em',
-    color: '#383838',
-    '& .arrow': {
-      width: '2.5em',
-      height: '1.6em',
-    },
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.1em',
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1em',
-    }
-  }));
-
-  const SocialIcon = styled(IconButton)(() => ({
-    backgroundColor: "#282828",
-    color: 'white'
-  }));
-
-  const Description = styled(Typography)(() => ({
-    marginTop: '2em',
-    marginBottom: '1.5em',
-    fontSize: '1.2em',
+    height: '1em',
+    width: 'auto',
+    fontSize: '1.3em',
+    fontWeight: 400,
     fontFamily: 'Nunito, sans-serif',
-    opacity: 0.6,
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.1em',
-    }
+    textAlign: "center",
+      [theme.breakpoints.up('md')]: {
+          textAlign: 'left',
+      },
+    fontStyle: 'italic'
   }));
+
+  const spin = keyframes`
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(-25deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
+  `;
 
   return (
       <HeroContainer id="home">
-        <Slogan>
-          {content.hero["slogan"]}
-          <Typed
-              text={content.hero["slogan-options"]}
-              color="#9236EF"
-          />
-        </Slogan>
-
-        <Profession>
-          <Stack direction="row" gap={2} sx={{alignItems: 'center'}}>
-            <Stack direction="row" gap={1} sx={{alignItems: 'center'}}>
-              <ArrowIcon className="arrow"/>
-              <Typography
+          <Grid container spacing={2}>
+            <Grid
+                item
+                xs={12} sm={12} md={4} lg={3}
+                sx={{
+                    width: "2em",
+                    height: "fit-content",
+                    minHeight: "2em",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}
+            >
+                <Image src={photo} alt="My photo" />
+            </Grid>
+            <Grid
+                item
+                xs={12} sm={12} md={8} lg={9}
+                sx={{
+                    display: "flex",
+                    justifyContent: { xs: "center", sm: "center", md: "left", lg: "left" }
+                }}
+            >
+              <Stack
+                  direction="column"
                   sx={{
-                    fontFamily: 'Bree Serif',
-                    fontSize: '1.2em'
+                      marginLeft: {md: "1.5em"}
                   }}
               >
-                {content.hero["profession"]}
-              </Typography>
-            </Stack>
-          </Stack>
-        </Profession>
-
-        <Description>
-          {content.hero["briefDescription"]}
-        </Description>
-
-        <Stack
-            direction="row"
-            gap={2}
-            sx={{
-              marginTop: '1em'
-            }}
-        >
-          <Button
-              variant="contained"
-              startIcon={<MessageIcon/>}
-              sx={{
-                width: 'fit-content',
-                backgroundColor: '#282828',
-                borderRadius: '5em',
-                textTransform: 'capitalize'
-              }}
-              disableElevation
-          >
-            Let's Talk
-          </Button>
-        </Stack>
+                <Name
+                    sx={{
+                        textAlign: { xs: "center", sm: "center", md: "left", lg: "left" }
+                    }}
+                >
+                    Wesley Santos
+                </Name>
+                <Occupation
+                    sx={{
+                        textAlign: { xs: "center", sm: "center", md: "left", lg: "left" }
+                    }}
+                >
+                    Full Stack Web Developer
+                </Occupation>
+                <Box
+                  sx={{
+                    height: "7em",
+                    marginTop: "1em",
+                    borderLeft: { md: "4px solid #282828", lg: "4px solid #282828" },
+                    padding: "1em 1em"
+                  }}
+                >
+                    <TypedText
+                        sx={{
+                            marginBottom: "1em" ,
+                            textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
+                        }}
+                    >
+                        Hi!
+                        <Typography
+                            component="span"
+                            sx={{
+                                top: "0.25em",
+                                position: "relative",
+                                marginLeft: "0.75em",
+                                width: "fit-content",
+                                display: "inline-flex",
+                                animation: `${spin} 3s ease-out infinite`
+                            }}
+                        >
+                            <WavingHandIcon/>
+                        </Typography>
+                    </TypedText>
+                  <Typed
+                      type={[
+                          "Let's create awesome experiences!",
+                          "Let's create something fancy!",
+                          "Let's build a new WEB."
+                      ]}
+                      RenderComponent={TypedText}
+                  />
+                </Box>
+              </Stack>
+            </Grid>
+          </Grid>
       </HeroContainer>
   )
 }

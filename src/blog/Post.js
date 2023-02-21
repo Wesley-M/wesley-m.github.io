@@ -1,12 +1,12 @@
 import {useState, useEffect} from "react"
-import Navbar from "../navigation/Navbar";
+import Navbar from "../components/navigation/Navbar";
 import {Box, styled, Typography} from "@mui/material";
 import {useParams} from "react-router-dom";
 import posts from './posts/metadata.json';
-import {Markdown} from "../../shared/Markdown";
-import {convertTimestamp} from "../../utils/time";
+import {Markdown} from "./components/Markdown";
+import {convertTimestamp} from "./utils/time";
 import {AboutMe} from "./components/AboutMe";
-import {Wrapper} from "../../shared/Wrapper";
+import {Wrapper} from "../shared/Wrapper";
 
 const Post = () => {
   const Header = styled(Typography)(() => ({

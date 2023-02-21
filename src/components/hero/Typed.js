@@ -1,21 +1,32 @@
 import React, {useState, useEffect} from 'react'
 import {keyframes, styled, Typography, useTheme} from "@mui/material";
 
-const SPEEDS = {
-  WRITE: 240,
-  DELETE: 80
+// It transforms ease to set speed, into a time interval.
+function speedToRealTimeStep(speed, lowBoundTimeStep, highBoundTimeStep) {
+  const SPEED_STEP = (highBoundTimeStep - lowBoundTimeStep) / 100;
+  return highBoundTimeStep - SPEED_STEP * speed;
 }
 
-function Typed({text, color}) {
-  const TypedText = styled(Typography)(() => ({
-    margin: 0,
-    marginBottom: '0.8em',
-    height: '1em',
-    width: 'auto',
-    fontSize: '1em',
-    fontFamily: 'Bree Serif',
-    color: `${color}`
-  }));
+function Typed(props) {
+
+  const {
+    // List of phrases to be typed
+    type = ["Typing..."],
+    // Relative speed to type (0 - 100) on write operation
+    writeSpeed = 95,
+    // Relative speed to type (0 - 100) on delete operation
+    deleteSpeed = 90,
+    // Low bound on the time step between typings (Equivalent to speed 0)
+    lowBoundTimeStep = 5,
+    // High bound on the time step between typings (Equivalent to speed 100)
+    highBoundTimeStep = 500,
+    // Time to pause after writing a phrase
+    pauseAfterWrite = 1500,
+    // Which component to type into
+    RenderComponent = Typography,
+    // Cursor color
+    cursorColor = "#282828"
+  } = props;
 
   const blink = keyframes`
     50% {
@@ -24,18 +35,33 @@ function Typed({text, color}) {
   `;
 
   const Cursor = styled('span')(() => ({
-    borderLeft: `.1em solid ${color}BB`,
+    borderLeft: `.1em solid ${cursorColor}BB`,
     animation: `${blink} .7s steps(1) infinite`,
     fontSize: '0.7em'
   }));
 
   const [internalText, setText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
-  const [speed, setSpeed] = useState(SPEEDS.WRITE)
+  const [speed, setSpeed] = useState(writeSpeed)
   const [loop, setLoop] = useState(0)
 
-  const i = loop % text.length
-  const fullText = text[i]
+  // Finds the first position where two strings start to differ
+  // We use this to avoid deleting a string that we will have to re-type next.
+  function findFirstDiffPos(a, b) {
+    let i = 0;
+    if (a === b) return a.length - 1;
+    while (a[i] === b[i]) i++;
+    return i;
+  }
+
+  const fullText = type[loop]
+  const nextFulltext = type[(loop + 1) % type.length]
+
+  const intersectWithNextText = findFirstDiffPos(fullText, nextFulltext)
+  const textToStop = fullText.substring(0, intersectWithNextText);
+
+  console.log(textToStop);
+  console.log("---")
 
   const handleTyping = () => {
     setText(
@@ -44,31 +70,29 @@ function Typed({text, color}) {
             : fullText.substring(0, internalText.length + 1)
     )
 
-    setSpeed(isDeleting ? SPEEDS.DELETE : SPEEDS.WRITE)
+    setSpeed(isDeleting ? deleteSpeed : writeSpeed)
 
     if (!isDeleting && internalText === fullText) {
-      setTimeout(() => setIsDeleting(true), 500)
-    } else if (isDeleting && internalText === '') {
+      setTimeout(() => setIsDeleting(true), pauseAfterWrite)
+    } else if (isDeleting && internalText === textToStop) {
       setIsDeleting(false)
-      setLoop(loop + 1)
+      setLoop((loop + 1) % type.length)
     }
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
       handleTyping()
-    }, speed)
+    }, speedToRealTimeStep(speed, lowBoundTimeStep, highBoundTimeStep))
     return () => clearTimeout(timer)
   })
 
-  console.log(internalText)
-
   return (
-      <TypedText>
+      <RenderComponent>
         {internalText}
         <Cursor />
-      </TypedText>
+      </RenderComponent>
   )
 }
 
-export default Typed
+export default Typed;

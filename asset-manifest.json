@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2bbb0a02.css",
+    "main.js": "/static/js/main.27831599.js",
+    "static/js/989.2135aa02.chunk.js": "/static/js/989.2135aa02.chunk.js",
+    "static/js/346.a5afe909.chunk.js": "/static/js/346.a5afe909.chunk.js",
+    "static/js/434.bbfcdc8c.chunk.js": "/static/js/434.bbfcdc8c.chunk.js",
+    "static/js/920.0a7c4e2d.chunk.js": "/static/js/920.0a7c4e2d.chunk.js",
+    "static/js/595.4502a313.chunk.js": "/static/js/595.4502a313.chunk.js",
+    "static/js/833.ff084116.chunk.js": "/static/js/833.ff084116.chunk.js",
+    "static/js/530.542663ca.chunk.js": "/static/js/530.542663ca.chunk.js",
+    "static/js/942.9bb2453b.chunk.js": "/static/js/942.9bb2453b.chunk.js",
+    "static/js/868.38b36321.chunk.js": "/static/js/868.38b36321.chunk.js",
+    "static/media/me.jpg": "/static/media/me.3bf105a5971d47643583.jpg",
+    "static/media/waving-hand.svg": "/static/media/waving-hand.13c408a45cbd4fa598f37d0d25e4b5f5.svg",
+    "static/media/revisiting_java.md": "/static/media/revisiting_java.31d6cfe0d16ae931b73c.md",
+    "static/media/who_am_i.md": "/static/media/who_am_i.465f69815e917669f4e9.md",
+    "index.html": "/index.html",
+    "static/media/grasp.md": "/static/media/grasp.31d6cfe0d16ae931b73c.md",
+    "static/media/program_to_interface.md": "/static/media/program_to_interface.31d6cfe0d16ae931b73c.md",
+    "static/media/revisiting_js.md": "/static/media/revisiting_js.31d6cfe0d16ae931b73c.md",
+    "static/media/revisiting_ts.md": "/static/media/revisiting_ts.31d6cfe0d16ae931b73c.md",
+    "main.2bbb0a02.css.map": "/static/css/main.2bbb0a02.css.map",
+    "main.27831599.js.map": "/static/js/main.27831599.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bbb0a02.css",
+    "static/js/main.27831599.js"
+  ]
+}

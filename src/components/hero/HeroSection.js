@@ -5,6 +5,8 @@ import { ReactComponent as WavingHandIcon } from '../../images/waving-hand.svg';
 import photo from "../../images/me.jpg"
 import Typed from "./Typed";
 
+import textToType from "../content/type.json"
+
 function HeroSection() {
   const theme = useTheme();
 
@@ -136,11 +138,7 @@ function HeroSection() {
                         </Typography>
                     </TypedText>
                   <Typed
-                      type={[
-                          "Let's create awesome experiences!",
-                          "Let's create something fancy!",
-                          "Let's build a new WEB."
-                      ]}
+                      type={textToType.type}
                       RenderComponent={TypedText}
                   />
                 </Box>

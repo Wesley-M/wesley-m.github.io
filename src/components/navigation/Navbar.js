@@ -16,7 +16,6 @@ function Navbar() {
   const NavLink = styled(Button)(() => ({
     color: 'rgba(40,40,40,0.8)',
     fontWeight: 700,
-    margin: '0 1em',
     fontFamily: 'Nunito, sans-serif'
   }));
 
@@ -34,15 +33,12 @@ function Navbar() {
 
             <Box sx={{ flexGrow: 16 }} />
 
-            <Box sx={{ display: {xs: 'none', sm: 'flex'} }}>
+            <Box>
               <Link to="/blog" style={{ textDecoration: 'none' }}>
                 <NavLink>Blog</NavLink>
               </Link>
-              <NavLink href="/#education">Education</NavLink>
-              <NavLink href="/#contact">Contact</NavLink>
+              <NavLink href="mailto:wesleymatteus99@gmail.com">Contact Me</NavLink>
             </Box>
-
-            <Box sx={{ flexGrow: 1 }} />
           </Toolbar>
         </AppBar>
       </Box>

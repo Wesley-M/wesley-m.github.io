@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/navigation/Navbar";
 import posts from "./posts/metadata";
 import Card from "../shared/Card";
-import BottomMenu from "../components/navigation/BottomMenu";
 import {Wrapper} from "../shared/Wrapper";
 
 export function BlogList() {
@@ -41,7 +40,6 @@ export function BlogList() {
             ))}
           </Grid>
         </Wrapper>
-        <BottomMenu/>
       </>
   );
 }

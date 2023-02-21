@@ -1,0 +1,9 @@
+{
+  "works": [
+    {
+      "title": "Beeper",
+      "image": "../images/beeper-thumbnail.png",
+      "description": "Musical project inspired on google chrome’s song maker. It’s basically a note sequencer with some fancy features on top."
+    }
+  ]
+}

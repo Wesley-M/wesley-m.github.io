@@ -1,5 +1,7 @@
-import {Box, styled, Typography} from "@mui/material";
+import {Box, Stack, styled, Typography} from "@mui/material";
 import {Wrapper} from "../../shared/Wrapper";
+
+import content from "../content/experiences.json";
 
 function ExperienceSection() {
     const ExperienceContainer = styled(Box)(() => ({
@@ -25,21 +27,45 @@ function ExperienceSection() {
                 </Typography>
 
                 <Box sx={{ marginTop: "2em" }}>
-                    {["JAVA", "PYTHON", "JAVASCRIPT"].map(tag => (
-                        <Typography
+                    {content.languages.map(tag => (
+                        <Stack
                             sx={{
                                 display: "inline-flex",
-                                padding: "0.1em 1.25em",
-                                marginRight: "0.5em",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                margin: "0.25em",
                                 borderRadius: "0.25em",
                                 backgroundColor: "white",
-                                color: "#1D7FC6",
-                                fontWeight: 600,
-                                fontFamily: "Nunito, sans-serif"
+                                color: "#1D7FC6"
                             }}
+                            gap={1}
+                            direction="row"
                         >
-                            {tag}
-                        </Typography>
+                            <Typography
+                                sx={{
+                                    width: "70%",
+                                    height: "100%",
+                                    padding: "0.15em 0.5em",
+                                    fontWeight: 600,
+                                    fontFamily: "Nunito, sans-serif"
+                                }}
+                            >
+                                {tag.language}
+                            </Typography>
+                            <Typography
+                                sx={{
+                                    height: "100%",
+                                    color: "white",
+                                    backgroundColor: "#282828",
+                                    padding: "0.15em 0.5em",
+                                    borderRadius: "0 0.25em 0.25em 0",
+                                    fontWeight: 700,
+                                    fontFamily: "Nunito, sans-serif"
+                                }}
+                            >
+                                {tag.ex}
+                            </Typography>
+                        </Stack>
                     ))}
                 </Box>
             </Wrapper>

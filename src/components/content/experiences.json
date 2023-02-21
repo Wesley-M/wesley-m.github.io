@@ -1,0 +1,17 @@
+{
+    "languages": [
+        {"ex": "+4y", "language": "Python"},
+        {"ex": "+5y", "language": "Java"},
+        {"ex": "+3y", "language": "SQL"},
+        {"ex": "+4y", "language": "Javascript"}
+    ],
+    "tools": [
+
+    ],
+    "frameworks": [
+
+    ],
+    "diverse": [
+
+    ]
+}

@@ -1,1 +1,3 @@
-# wesley-m.github.io
+## My personal portfolio and blog 
+
+### Welcome!

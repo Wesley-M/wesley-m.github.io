@@ -1,0 +1,53 @@
+.WorkCard {
+    width: 100%;
+    margin: 3em 0;
+}
+
+.WorkCard img {
+    width: 100%;
+    height: 35vh;
+}
+
+.cardInfo {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin: 0 1em;
+    padding: 1.5em 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.title {
+    font-size: 1.7em;
+    font-family: 'Bree Serif', serif;
+}
+
+.description {
+    width: 100%;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagList span {
+    padding: 0.3em 0.5em;
+    font-weight: bold;
+    margin: 0 0.8em;
+}
+
+.tagList span:first-child {
+    margin: 0 0;
+}
+
+.WorkCard button {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    margin-top: 1.5em;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    color: inherit;
+}

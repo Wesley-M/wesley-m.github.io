@@ -1,0 +1,34 @@
+.contactForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contactForm label {
+    width: 100%;
+}
+
+.contactForm input, .contactForm textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 0.6em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.contactForm p {
+    margin: 1.2em 0 0.3em 0;
+}
+
+.contactForm button {
+    border: none;
+    border-radius: 2em;
+    width: 80%;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    height: 3em;
+}
+
+.contactForm input:focus, .contactForm textarea:focus {
+    outline: none;
+}

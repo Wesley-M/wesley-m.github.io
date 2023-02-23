@@ -9,52 +9,54 @@ import {AboutMe} from "./components/AboutMe";
 import {Wrapper} from "../shared/Wrapper";
 
 const Post = () => {
-  const Header = styled(Typography)(() => ({
-    color: '#282828',
-    opacity: 0.7,
-    fontSize: '0.9em',
-    marginBottom: '-1.5em'
-  }));
+    const Header = styled(Typography)(() => ({
+        color: '#282828',
+        opacity: 0.7,
+        fontSize: '0.9em',
+        marginBottom: '-1.5em'
+    }));
 
-  let params = useParams();
+    let params = useParams();
 
-  const [postContent, setPostcontent] = useState('')
-  const post_metadata = posts['content'][params.id];
+    const [postContent, setPostcontent] = useState('')
+    const post_metadata = posts['content'][params.id];
 
-  useEffect(() => {
-    import(`./posts/${post_metadata.path}`)
-        .then(res =>
+    useEffect(() => {
+        import(`./posts/${post_metadata.path}`)
+          .then(res =>
             fetch(res.default)
-                .then(response => response.text())
-                .then(response => setPostcontent(response))
-                .catch(err => console.log(err))
-        )
-  }, [params.id])
+              .then(response => response.text())
+              .then(response => setPostcontent(response))
+              .catch(err => console.log(err))
+          )
+    }, [params.id])
 
-  return (
+    return (
       <>
-        <Navbar/>
-        <Wrapper>
-          <Box
-              sx={{
-                marginTop: '4em',
-                fontFamily: 'Nunito, sans-serif'
-              }}
-          >
-            <Header>
-              <span style={{ fontStyle: 'italic' }}>
-                Published at
-              </span>
-              {" " + convertTimestamp(post_metadata['creation_date'])}
-            </Header>
+          <Navbar/>
+          <Wrapper>
+              <Box
+                sx={{
+                    marginTop: '4em',
+                    fontFamily: 'Nunito, sans-serif'
+                }}
+              >
+                  {postContent !== '' ? (
+                    <Header>
+                        <span style={{ fontStyle: 'italic' }}>Published at</span>
+                        {" " + convertTimestamp(post_metadata['creation_date'])}
+                    </Header>
+                  ): null}
 
-            <Markdown content={postContent} />
+                  <Markdown content={postContent} />
 
-            <AboutMe/>
-          </Box>
-        </Wrapper>
+                  {postContent !== '' ? (
+                    <AboutMe/>
+                  ): null}
+              </Box>
+          </Wrapper>
       </>
-  )
+    )
 }
 
 export default Post;

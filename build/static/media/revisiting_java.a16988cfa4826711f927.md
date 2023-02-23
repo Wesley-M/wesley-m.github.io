@@ -1,6 +1,6 @@
 ---
 title: Revisiting Java
-description: Hello! In this post I am going to revisit Java. From simple to more advanced concepts
+description: Hello! In this post I am going to revisit Java. From simple concepts to more advanced ones.
 cover: https://upload.wikimedia.org/wikipedia/commons/5/5d/Duke_%28Java_mascot%29_waving.svg
 tags: java
 ---

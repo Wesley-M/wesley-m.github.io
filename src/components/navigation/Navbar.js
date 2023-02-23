@@ -20,28 +20,28 @@ function Navbar() {
   }));
 
   return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar
-            sx={{ backgroundColor: 'white', color: 'red' }}
-            position="fixed"
-            elevation={0}
-        >
-          <Toolbar sx={{ margin: '0 10%' }}>
-            <Logo to="/">
-              Portfolio
-            </Logo>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        sx={{ backgroundColor: 'white', color: 'red' }}
+        position="fixed"
+        elevation={0}
+      >
+        <Toolbar sx={{ margin: '0 10%' }}>
+          <Logo to="/">
+            Portfolio
+          </Logo>
 
-            <Box sx={{ flexGrow: 16 }} />
+          <Box sx={{ flexGrow: 16 }} />
 
-            <Box>
-              <Link to="/blog" style={{ textDecoration: 'none' }}>
-                <NavLink>Blog</NavLink>
-              </Link>
-              <NavLink href="mailto:wesleymatteus99@gmail.com">Contact Me</NavLink>
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </Box>
+          <Box>
+            <Link to="/blog" style={{ textDecoration: 'none' }}>
+              <NavLink>Blog</NavLink>
+            </Link>
+            <NavLink href="mailto:wesleymatteus99@gmail.com">Contact Me</NavLink>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 

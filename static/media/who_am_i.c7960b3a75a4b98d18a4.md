@@ -1,7 +1,7 @@
 ---
 title: Who am I ?
 description: Hi! My name is Wesley. I am a computer science student from
-the Federal University of Campina Grande (UFCG) - Brazil.
+the Federal University of Campina Grande (UFCG) - Brazil
 cover: https://picsum.photos/id/0/300/300
 tags: introduction
 ---

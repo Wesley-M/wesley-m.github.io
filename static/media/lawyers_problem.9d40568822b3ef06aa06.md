@@ -40,9 +40,9 @@ First, I was met with several questions:
 - How to keep row order ? Max, Min, Average 
 - How to cast average into a int ?
 
-I considered that any lawyer with the maximum number of customers number is fine. I learned about
+I considered that any lawyer with the maximum number of customers is fine. I learned about
 the UNION keyword and its features. Created an artificial column just to keep order with ORDER BY.
-And casted the average with the CAST function.
+And cast the average with the CAST function.
 
 At the end, my solution was:
 
@@ -55,7 +55,7 @@ select name, customers_number from (
             select MAX(customers_number) 
             from lawyers) 
             limit 1
-        ) union
+        ) union all
     (
         select name, customers_number, 2 as ord 
         from lawyers 
@@ -63,7 +63,7 @@ select name, customers_number from (
             select MIN(customers_number) 
             from lawyers) 
             limit 1
-        ) union
+        ) union all
     (
         select name, customers_number, 3 as ord 
         from (values ('Average', (

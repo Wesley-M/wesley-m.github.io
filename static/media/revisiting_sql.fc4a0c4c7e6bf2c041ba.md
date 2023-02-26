@@ -81,7 +81,7 @@ order by random() limit 5);
 
 ---
 
-Select average length of films after 2005. In case of length being null, then consider it 0.
+Select average film length after 2005. In case of length being null, then consider it 0.
 Round to 2 decimal cases.
 
 ```sql

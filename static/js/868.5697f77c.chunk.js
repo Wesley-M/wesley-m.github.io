@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[868],{6868:function(o,e,t){o.exports=t.p+"static/media/who_am_i.105668840bc7e321181a.md"}}]);

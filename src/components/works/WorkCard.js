@@ -3,7 +3,7 @@ import {Box, Grid, Link, Stack, styled, Typography} from "@mui/material";
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-function WorkCard({ img, title, description }) {
+function WorkCard({ img, title, description, link }) {
     const Image = styled("img")(() => ({
         width: "100%",
         height: "100%"
@@ -51,7 +51,7 @@ function WorkCard({ img, title, description }) {
                     <Stack sx={{ marginTop: "1em" }} direction="row" alignItems="center" gap={1}>
                         <Link
                             target="_blank"
-                            href="http://beeper.netlify.app"
+                            href={link}
                             sx={{
                                 fontFamily: "Nunito, sans-serif",
                                 fontSize: "1.3em",

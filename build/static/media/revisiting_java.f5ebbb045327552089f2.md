@@ -16,28 +16,3 @@ oiling our gears :car:.
 
 But enough with the talking, let's get into it.
 
-
-Simple Hello World:
-
-```java
-/* 
-Every class in java has packages.
-
-At the end of the day, they are just folders where you put a set of classes, interfaces, ...
-But it's good to remember that they have special semantics as well - e.g. Controlled access 
-of data between classes.
-*/
-
-package first.package;
-
-// Mostly boilerplate code
-public class HelloWorld {
- public static void main(String[] args) {
-    
-    // With System.out we access the 'default output' of the program
-    System.out.println("Hello, World!");
- }
-}
-```
-Data Types:
-

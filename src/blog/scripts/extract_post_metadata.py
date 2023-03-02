@@ -119,7 +119,9 @@ posts['content'] = {}
 
 # Formatting JSON to write
 for idx, post in enumerate(posts_metadata):
-    posts['content'][idx+1] = post
+    filepath = post['path'].split("/")[1]
+    url_id = filepath.split(".")[0]
+    posts['content'][url_id] = post
 
 with open(f'{posts_path}/metadata.json', 'w') as f:
     json.dump(posts, f)

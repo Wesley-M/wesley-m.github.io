@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[741],{9741:function(c,e,i){c.exports=i.p+"static/media/revisiting_sql.fc4a0c4c7e6bf2c041ba.md"}}]);

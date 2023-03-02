@@ -13,6 +13,7 @@ function WorkSection() {
           img={work.image}
           title={work.title}
           description={work.description}
+          link={work.link}
       />
     ))
 

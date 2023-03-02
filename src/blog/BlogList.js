@@ -32,7 +32,7 @@ function PostPreview(props) {
 
   const CardImage = styled('img')(() => ({
     width: '100%',
-    height: '25vh',
+    height: '200px',
     borderRadius: '0.2em',
     filter: 'grayscale(0.5)',
     transition: 'filter 150ms ease-in-out',

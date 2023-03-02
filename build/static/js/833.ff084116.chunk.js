@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[833],{2833:function(i,t,a){i.exports=a.p+"static/media/revisiting_java.a16988cfa4826711f927.md"}}]);

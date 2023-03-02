@@ -6,8 +6,6 @@ cover: https://picsum.photos/id/0/300/300
 tags: introduction
 ---
 
-# Who am I ?
-
 Hey! Thanks for stopping by :smile:. My name is Wesley, and I've 
 recently graduated in Computer Science at the Federal University of 
 Campina Grande (UFCG) - Brazil. My major interests are in Fullstack 

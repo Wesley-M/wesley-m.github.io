@@ -1,6 +1,4 @@
-
-# Lawyers' problem [2737]
-
+# Lawyers problem [2737]
 The manager of Mangojata Lawyers requested a report on the current lawyers.
 
 The manager wants you to show him the name of the lawyer with the most clients, the one with the fewest and the client average considering all lawyers.

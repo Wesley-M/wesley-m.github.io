@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[324],{9324:function(e,o,f){e.exports=f.p+"static/media/lawyers_problem.3775a77befc766b3fef1.md"}}]);

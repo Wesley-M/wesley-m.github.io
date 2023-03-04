@@ -1,12 +1,12 @@
-import {Box, Stack, styled, Typography} from "@mui/material";
-import {Wrapper} from "../../shared/Wrapper";
+import { Box, Stack, styled, Typography } from "@mui/material";
+import { Wrapper } from "../../shared/Wrapper";
 
-import content from "../content/experiences.json";
+import content from "../../content/experiences.json";
 
 function ExperienceSection() {
     const ExperienceContainer = styled(Box)(() => ({
         width: '100%',
-        height: '30vh',
+        height: 'auto',
         marginTop: '5em',
         position: 'relative',
         backgroundColor: '#1D7FC6'

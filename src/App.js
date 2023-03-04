@@ -3,23 +3,27 @@ import React from 'react';
 import HeroSection from './components/hero/HeroSection';
 import WorkSection from './components/works/WorkSection';
 
-import './App.css';
-import {Box} from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/navigation/Navbar";
-import {Wrapper} from "./shared/Wrapper";
+import { Wrapper } from "./shared/Wrapper";
 import ExperienceSection from "./components/experiences/ExperienceSection";
+import { lightTheme } from './themes/light';
+
+import './App.css';
 
 function App() {
 
   return (
+    <ThemeProvider theme={lightTheme}>
       <Box>
-        <Navbar/>
+        <Navbar />
         <Wrapper>
           <HeroSection />
         </Wrapper>
-        <ExperienceSection/>
-        <WorkSection/>
+        <ExperienceSection />
+        <WorkSection />
       </Box>
+    </ThemeProvider>
   );
 }
 

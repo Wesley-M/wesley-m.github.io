@@ -1,45 +1,48 @@
-import {Box, Grid, Stack, styled} from "@mui/material";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navigation/Navbar";
-import posts from "./posts/metadata";
-import Card from "../shared/Card";
-import {Wrapper} from "../shared/Wrapper";
+import {Stack, styled} from "@mui/material";
+import {Link} from "react-router-dom";
+import {PostPreview} from "./components/PostPreview";
+import {FilterBar} from "./components/FilterBar";
+import {useState} from "react";
 
-export function BlogList() {
+export function BlogList({ posts }) {
+
+  const [metadataToShow, setMetadataToShow] = useState([]);
+  const [hasActiveFilter, setHasActiveFilter] = useState(false);
+
   return (
-      <>
-        <Navbar/>
-        <Wrapper>
-          <Box>
-            <h1 className="sectionTitle">Blog</h1>
-          </Box>
-          <Grid container spacing={{xs: 1, sm: 1, md: 10, lg: 10, xl: 10}}>
-            {Object.keys(posts['content']).map((post) => (
-                <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                >
-                  <Link
-                      key={post}
-                      to={`/blog/${post}`}
-                      style={{ textDecoration: "none" }}
-                  >
-                    <Card
-                        imgSrc={posts['content'][post].cover}
-                        title={posts['content'][post].title}
-                        description={posts['content'][post].description}
-                        tags={posts['content'][post].tags.split(',')}
-                        hideAction
-                    />
-                  </Link>
-                </Grid>
-            ))}
-          </Grid>
-        </Wrapper>
-      </>
+    <BlogListContainer direction="column" gap={2}>
+      <FilterBar
+        metadata={posts['content']}
+        handleFilteredMetadata={setMetadataToShow}
+        handleHasActiveFilters={setHasActiveFilter}
+      />
+
+      {(hasActiveFilter ? metadataToShow : Object.values(posts['content'])).map((post) => (
+        <Link
+          key={posts['index'][post.title]}
+          to={`/blog/${posts['index'][post.title]}`}
+          style={{textDecoration: "none"}}
+        >
+          <PostPreview
+            imgSrc={post.cover}
+            title={post.title}
+            description={post.description}
+            tags={post.tags.split(',')}
+            publishedAt={post.last_updated}
+            readtime={post.readtime}
+          />
+        </Link>
+      ))}
+    </BlogListContainer>
   );
 }
+
+const BlogListContainer = styled(Stack)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    width: '100%'
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: '80%'
+  },
+  marginTop: "5em"
+}));

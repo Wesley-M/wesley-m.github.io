@@ -3,7 +3,7 @@ import WorkCard from './WorkCard'
 import {Stack, Typography} from "@mui/material";
 import {Wrapper} from "../../shared/Wrapper";
 
-import content from "../content/works.json"
+import content from "../../content/works.json"
 
 function WorkSection() {
 
@@ -13,6 +13,7 @@ function WorkSection() {
           img={work.image}
           title={work.title}
           description={work.description}
+          link={work.link}
       />
     ))
 

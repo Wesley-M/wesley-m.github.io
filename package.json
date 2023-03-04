@@ -1,21 +1,19 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://wesley-m.github.io",
   "private": true,
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@giscus/react": "^2.2.6",
     "@material-ui/core": "^4.11.0",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "eslint": "^8.23.0",
-    "jump.js": "^1.0.2",
+    "fuzzysort": "^2.0.4",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
-    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3",
     "react-router-dom": "6",
@@ -26,8 +24,13 @@
     "remark-gfm": "^3.0.1"
   },
   "scripts": {
+    "blog": "cd src/blog/scripts && python3 ./extract_post_metadata.py",
+    "prestart": "yarn blog",
     "start": "react-scripts start",
+    "prebuild": "yarn blog",
     "build": "react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "gh-pages": "^5.0.0"
   }
 }

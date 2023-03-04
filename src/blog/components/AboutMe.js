@@ -1,4 +1,7 @@
 import {Box, Stack, Typography} from "@mui/material";
+import Photo from "../../images/me.jpg"
+
+
 export const AboutMe = () => {
   return (
       <Stack
@@ -11,14 +14,14 @@ export const AboutMe = () => {
           }}
       >
         <Box>
-          {/*<img*/}
-          {/*    src={Photo}*/}
-          {/*    style={{*/}
-          {/*      width: '5em',*/}
-          {/*      height: '5em',*/}
-          {/*      borderRadius: '0.25em'*/}
-          {/*    }}*/}
-          {/*/>*/}
+          <img
+              src={Photo}
+              style={{
+                width: '5em',
+                height: '5em',
+                borderRadius: '2.5em'
+              }}
+          />
         </Box>
         <Box>
           <Typography
@@ -39,10 +42,9 @@ export const AboutMe = () => {
               fontFamily: 'Nunito, sans-serif'
             }}
           >
-            I am a student of Computer Science at the Federal University of Campina Grande.
-            My interests are varied, but orbit around Fullstack development, Data Analysis
-            and Distributed Systems. My languages of choice - that I am most experienced with
-            -  are Javascript, Java, Python and R.
+            I am full stack developer based on Campina Grande - PB (Brazil). I've graduated from 
+            the Federal University of Campina Grande. I am most interested in Fullstack development 
+            and Data Analysis. My languages of choice are Javascript, Java, Python and R.
           </Typography>
         </Box>
       </Stack>

@@ -1,1 +1,72 @@
-{"content": {"revisiting_sql": {"author": "Wesley Santos", "path": "render/revisiting_sql.md", "creation_date": 1677244115, "title": "Revisiting SQL", "description": "Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.", "cover": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", "tags": "sql", "readtime": "2 min"}, "lawyers_problem": {"author": "Wesley Santos", "path": "render/lawyers_problem.md", "creation_date": 1677432123, "title": "Lawyers problem [Beecrowd]", "description": "Solving the lawyers problem on beecrowd", "cover": "https://beecrowd.io/wp-content/uploads/2021/08/beecrowd__roxoVert-300x241.png", "tags": "beecrowd, sql", "readtime": "2 min"}, "revisiting_java": {"author": "Wesley Santos", "path": "render/revisiting_java.md", "creation_date": 1677438441, "title": "Revisiting Java", "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts", "cover": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Duke_%28Java_mascot%29_waving.svg", "tags": "java", "readtime": "1 min"}, "who_am_i": {"author": "Wesley Santos", "path": "render/who_am_i.md", "creation_date": 1677438935, "title": "Who am I ?", "description": "Hi! My name is Wesley. I am a computer science student from the Federal University of Campina Grande (UFCG) - Brazil", "cover": "https://picsum.photos/id/0/300/300", "tags": "introduction", "readtime": "1 min"}}}
+{
+    "content": {
+        "who_am_i": {
+            "author": "Wesley Santos",
+            "path": "render/who_am_i.md",
+            "last_updated": 1677753929,
+            "title": "Who am I ?",
+            "description": "Hi! My name is Wesley. I am a computer science student from the Federal University of Campina Grande (UFCG) - Brazil",
+            "cover": "https://picsum.photos/id/0/300/300",
+            "tags": "introduction",
+            "readtime": "1 min"
+        },
+        "revisiting_java": {
+            "author": "Wesley Santos",
+            "path": "render/revisiting_java.md",
+            "last_updated": 1677892165,
+            "title": "Revisiting Java",
+            "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts",
+            "cover": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Duke_%28Java_mascot%29_waving.svg",
+            "tags": "java",
+            "readtime": "1 min"
+        },
+        "revisiting_sql": {
+            "author": "Wesley Santos",
+            "path": "render/revisiting_sql.md",
+            "last_updated": 1677895327,
+            "title": "Revisiting SQL",
+            "description": "Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.",
+            "cover": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+            "tags": "sql",
+            "readtime": "2 min"
+        },
+        "partition_labels": {
+            "author": "Wesley Santos",
+            "path": "render/partition_labels.md",
+            "last_updated": 1677924403,
+            "title": "Partition Labels",
+            "description": "Let's study an interesting problem.",
+            "cover": "https://cdn.iconscout.com/icon/free/png-256/leetcode-3521542-2944960.png",
+            "tags": "java, leetcode",
+            "readtime": "3 min"
+        },
+        "lawyers_problem": {
+            "author": "Wesley Santos",
+            "path": "render/lawyers_problem.md",
+            "last_updated": 1677924594,
+            "title": "Lawyers problem [2737]",
+            "description": "Solving the lawyers problem on beecrowd",
+            "cover": "https://beecrowd.io/wp-content/uploads/2021/08/beecrowd__roxoVert-300x241.png",
+            "tags": "beecrowd, sql",
+            "readtime": "2 min"
+        },
+        "starting_leetcode_journey": {
+            "author": "Wesley Santos",
+            "path": "render/starting_leetcode_journey.md",
+            "last_updated": 1677924870,
+            "title": "Starting my Leetcode Journey",
+            "description": "Today I start practicing questions on leetcode! Here are my impressions and solutions for some questions.",
+            "cover": "https://cdn.iconscout.com/icon/free/png-256/leetcode-3521542-2944960.png",
+            "tags": "java, leetcode",
+            "readtime": "4 min"
+        }
+    },
+    "index": {
+        "Who am I ?": "who_am_i",
+        "Revisiting Java": "revisiting_java",
+        "Revisiting SQL": "revisiting_sql",
+        "Partition Labels": "partition_labels",
+        "Lawyers problem [2737]": "lawyers_problem",
+        "Starting my Leetcode Journey": "starting_leetcode_journey"
+    }
+}

@@ -1,7 +1,7 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
 import { Wrapper } from "../../shared/Wrapper";
 
-import content from "../content/experiences.json";
+import content from "../../content/experiences.json";
 
 function ExperienceSection() {
     const ExperienceContainer = styled(Box)(() => ({

@@ -5,8 +5,6 @@ cover: https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.s
 tags: sql
 ---
 
-# Revisiting SQL
-
 Hi everyone, today I am going to review some SQL commands. My goal is to take a little bit of rust out :rofl:
 
 The following post will be structured as a series of descriptions and commands. The database

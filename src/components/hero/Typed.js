@@ -60,9 +60,6 @@ function Typed(props) {
   const intersectWithNextText = findFirstDiffPos(fullText, nextFulltext)
   const textToStop = fullText.substring(0, intersectWithNextText);
 
-  console.log(textToStop);
-  console.log("---")
-
   const handleTyping = () => {
     setText(
         isDeleting

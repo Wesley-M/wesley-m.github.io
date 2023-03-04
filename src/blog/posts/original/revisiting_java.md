@@ -5,8 +5,6 @@ cover: https://upload.wikimedia.org/wikipedia/commons/5/5d/Duke_%28Java_mascot%2
 tags: java
 ---
 
-# Revisiting Java
-
 Hello :smile: ! Nice to see you again.
 
 After thinking for a while on what I should write about, I came to 

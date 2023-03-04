@@ -1,24 +1,24 @@
 import React from 'react';
 import App from './App';
 import {createRoot} from 'react-dom/client';
-import {BrowserRouter, Route, Routes, Outlet} from "react-router-dom";
+import {Route, Routes, Outlet, HashRouter} from "react-router-dom";
 
-import {BlogList} from "./blog/BlogList";
-import Post from "./blog/Post";
+import Post from "./blog/components/Post";
+import Blog from "./Blog";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Outlet />}>
           <Route index element={<App />} />
           <Route path="blog" element={<Outlet />}>
-            <Route index element={<BlogList />} />
+            <Route index element={<Blog />} />
             <Route path=":id" element={<Post />} />
           </Route>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
 );

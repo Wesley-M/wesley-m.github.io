@@ -1,6 +1,4 @@
-
 # Revisiting Java
-
 Hello :smile: ! Nice to see you again.
 
 After thinking for a while on what I should write about, I came to 

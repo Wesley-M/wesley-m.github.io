@@ -1,11 +1,9 @@
 ---
-title: Lawyers problem [Beecrowd]
+title: Lawyers problem [2737]
 description: Solving the lawyers problem on beecrowd
 cover: https://beecrowd.io/wp-content/uploads/2021/08/beecrowd__roxoVert-300x241.png
 tags: beecrowd, sql
 ---
-
-# Lawyers' problem [2737]
 
 The manager of Mangojata Lawyers requested a report on the current lawyers.
 

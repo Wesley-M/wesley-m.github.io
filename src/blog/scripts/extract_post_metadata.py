@@ -8,7 +8,7 @@ from functools import cmp_to_key
 from os import listdir, path
 import readtime
 
-def write_file_without_metadata(old_path, new_path, filename):
+def write_file_without_metadata(old_path, new_path, filename, post_title):
     # list to store file lines
     lines = []
 
@@ -27,6 +27,8 @@ def write_file_without_metadata(old_path, new_path, filename):
     
     # Write file
     with open(f"{new_path}/{filename}", 'w+') as fp:
+        fp.write(f"# {post_title}")
+
         # iterate each line
         for idx, line in enumerate(lines):
             if not after_header:
@@ -59,7 +61,7 @@ def get_file_metadadata(p, filename):
     # Default header
     header['author'] = 'Wesley Santos'
     header['path'] = f'render/{filename}'
-    header['creation_date'] = int(path.getctime(f'{p}/{filename}'))
+    header['last_updated'] = int(path.getctime(f'{p}/{filename}'))
 
     last_prop = ''
 
@@ -105,23 +107,26 @@ for filename in post_filenames:
     if not 'description' in post_metadata:
         raise Exception("There is a post without description")
 
-    post_content = write_file_without_metadata(original_posts_path, render_posts_path, filename)
+    post_content = write_file_without_metadata(original_posts_path, render_posts_path, filename, post_metadata['title'])
 
     # Estimate readtime and adding to metadata
     add_readtime_estimation(post_metadata, post_content)
 
     posts_metadata.append(post_metadata)
 
-posts_metadata = sorted(posts_metadata, key=cmp_to_key(lambda x, y: x['creation_date'] - y['creation_date']))
+posts_metadata = sorted(posts_metadata, key=cmp_to_key(lambda x, y: x['last_updated'] - y['last_updated']))
 
-posts = {}
-posts['content'] = {}
+posts = { 
+    'content': {},
+    'index': {}
+}
 
 # Formatting JSON to write
 for idx, post in enumerate(posts_metadata):
     filepath = post['path'].split("/")[1]
     url_id = filepath.split(".")[0]
     posts['content'][url_id] = post
+    posts['index'][post['title']] = url_id
 
 with open(f'{posts_path}/metadata.json', 'w') as f:
-    json.dump(posts, f)
+    json.dump(posts, f, indent=4)

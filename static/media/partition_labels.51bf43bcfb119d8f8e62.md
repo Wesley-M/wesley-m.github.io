@@ -2,7 +2,7 @@
 title: Partition Labels
 description: Let's study an interesting problem.
 cover: https://cdn.iconscout.com/icon/free/png-256/leetcode-3521542-2944960.png
-tags: java
+tags: java, leetcode
 ---
 
 ---

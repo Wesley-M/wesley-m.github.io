@@ -3,7 +3,7 @@ title: Starting my Leetcode Journey
 description: Today I start practicing questions on leetcode! Here are my impressions and
 solutions for some questions.
 cover: https://cdn.iconscout.com/icon/free/png-256/leetcode-3521542-2944960.png
-tags: java
+tags: java, leetcode
 ---
 
 Hi everyone!

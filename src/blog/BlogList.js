@@ -24,11 +24,10 @@ export function BlogList({ posts }) {
           style={{textDecoration: "none"}}
         >
           <PostPreview
-            imgSrc={post.cover}
             title={post.title}
             description={post.description}
-            tags={post.tags.split(',')}
-            publishedAt={post.last_updated}
+            tags={post.tags.split(', ')}
+            updatedAt={post.last_updated}
             readtime={post.readtime}
           />
         </Link>

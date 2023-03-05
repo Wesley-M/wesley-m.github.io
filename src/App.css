@@ -1,3 +1,7 @@
+:root {
+    --palette-code-highlight: 40, 40, 40;
+}
+
 * {
     box-sizing: border-box;
     transition: all 200ms;

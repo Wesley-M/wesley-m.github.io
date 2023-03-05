@@ -6,7 +6,7 @@ export const CardImage = styled("img")(({theme}) => ({
   [theme.breakpoints.up('xs')]: {
     borderRadius: "0.5em 0.5em 0 0"
   },
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('sm')]: {
     borderRadius: '0.5em 0 0 0.5em'
   }
 }));

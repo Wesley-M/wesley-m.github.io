@@ -1,7 +1,6 @@
 ---
 title: Revisiting SQL
 description: Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.
-cover: https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg
 tags: sql
 ---
 

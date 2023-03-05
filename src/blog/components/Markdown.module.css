@@ -1,19 +1,21 @@
-p, h1, h2, h3, h4, h5, h6, code, li {
+*:not(span) {
+    font-family: "PT Serif", "Times New Roman", Georgia, Cambria, Times, serif;
     color: #282828;
 }
 
-p, li {
-    font-family: Lora, Georgia, Cambria, "Times New Roman", Times, serif;
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: bolder
 }
 
-.reactMarkDown p, li {
-    font-size: 1em;
-    line-height: 1.8em;
-    opacity: 0.9;
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
 }
 
-li {
-    margin-top: 1em;
+.reactMarkDown p, li, table {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    opacity: 0.8;
 }
 
 table {
@@ -44,4 +46,19 @@ table td {
     border-top: 1px solid #ccc;
     margin: 2em 0;
     padding: 0;
+}
+
+span[data="highlight"] {
+    background-color: rgba(var(--palette-code-highlight), 0.15);
+}
+
+code {
+    transform: translateZ(0);
+    min-width: 100%;
+    float: left;
+}
+
+code > span[data="highlight"] {
+    display: block;
+    border-left: 4px solid rgb(var(--palette-code-highlight));
 }

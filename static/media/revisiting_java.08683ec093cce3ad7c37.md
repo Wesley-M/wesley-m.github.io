@@ -1,5 +1,10 @@
-# Revisiting Java
-Hello :smile: ! Nice to see you again.
+---
+title: Revisiting Java
+description: Hello! In this post I am going to revisit Java. From simple to more advanced concepts
+tags: java
+---
+
+Hello :smile: ! Nice to see you again!
 
 After thinking for a while on what I should write about, I came to 
 the conclusion that we need to start with good foundations. And I have to 

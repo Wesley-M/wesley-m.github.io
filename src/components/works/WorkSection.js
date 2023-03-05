@@ -1,9 +1,10 @@
 import WorkCard from './WorkCard'
 
 import {Stack, Typography} from "@mui/material";
-import {Wrapper} from "../../shared/Wrapper";
+import {Wrapper} from "../../shared/components/Wrapper";
 
 import content from "../../content/works.json"
+import {Section} from "./WorkSection.styles";
 
 function WorkSection() {
 
@@ -19,18 +20,7 @@ function WorkSection() {
 
     return (
         <Wrapper>
-            <Typography
-                sx={{
-                    marginTop: "0.5em",
-                    color: "#282828",
-                    fontSize: "1.8em",
-                    fontFamily: "Nunito, sans-serif",
-                    fontWeight: 600
-                }}
-            >
-                Works
-            </Typography>
-
+            <Section>Works</Section>
             <Stack direction="column">
                 {cards}
             </Stack>

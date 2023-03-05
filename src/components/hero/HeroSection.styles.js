@@ -4,13 +4,13 @@ import {Box, Grid, keyframes, Stack, styled, Typography} from "@mui/material";
 export const HeroContainer = styled(Grid)(({theme}) => ({
   width: '100%',
   [theme.breakpoints.up('xs')]: {
-    height: "90vh",
+    height: "70vh",
   },
   [theme.breakpoints.up('sm')]: {
     height: "60vh",
   },
-  [theme.breakpoints.up('lg')]: {
-    height: "40vh",
+  [theme.breakpoints.up('md')]: {
+    height: "50vh",
   },
   marginTop: '5em',
   position: 'relative'

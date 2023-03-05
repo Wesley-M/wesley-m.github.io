@@ -3,11 +3,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useCallback, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import { searchByQuery, searchByTag, tagsByOccurrence } from "../utils/search";
+import {useTags} from "../../shared/hooks/useTags";
 
 export const FilterBar = (props) => {
   const {
     metadata,
-    handleFilteredMetadata,
+    handleFilteredPosts,
     handleHasActiveFilters
   } = props;
   
@@ -17,9 +18,9 @@ export const FilterBar = (props) => {
   const [query, setQuery] = useState("");
 
   /**
-   * Currently selected tags
-  */
-  const [selectedTags, setSelectedTags] = useState([]);
+   * Stores all tags to filter by
+   */
+  const allTags = useMemo(() => tagsByOccurrence(Object.values(metadata)), []);
 
   /**
    * Posts considered when searching
@@ -27,34 +28,17 @@ export const FilterBar = (props) => {
   const [postsToSearch, setPostsToSearch] = useState(() => Object.values(metadata))
 
   /**
-   * Stores all tags to filter by
+   * Updates the posts that will be searched over
    */
-  const allTags = useMemo(() => tagsByOccurrence(Object.values(metadata)), []);
-
-  /**
-   * Returns true if tag is selected
-   */
-  const isTagSelected = (tag) => {
-    return selectedTags.includes(tag);
-  }
-
-  /**
-   * Handles the selection of tags
-   */
-  const handleSelectedTags = (tag) => {
-    let newTags = [];
-    
-    if (selectedTags.includes(tag)) {
-      newTags = (selectedTags.filter(t => t != tag));
-    } else {
-      newTags = ([...selectedTags, tag]);
-    }
-
+  const onTagsChange = (newTags) => {
     const filteredByTags = searchByTag(Object.values(metadata), newTags);
-    
     setPostsToSearch(filteredByTags);
-    setSelectedTags(newTags);
   }
+
+  /**
+   * Currently selected tags
+   */
+  const [selectedTags, isTagSelected, handleTagsChange] = useTags(allTags, [], onTagsChange);
 
   /**
    * Debounced query change
@@ -74,7 +58,7 @@ export const FilterBar = (props) => {
       handleHasActiveFilters(false);
     }
 
-    handleFilteredMetadata(results);
+    handleFilteredPosts(results);
   }, [query, selectedTags]);
 
   return (
@@ -96,7 +80,7 @@ export const FilterBar = (props) => {
         }}
       >
         {allTags.map(tag => (
-          <Grid item
+          <Grid item key={tag}
             sx={{
               padding: '0 0.4em',
               margin: '0.2em',
@@ -108,7 +92,7 @@ export const FilterBar = (props) => {
               },
               backgroundColor: isTagSelected(tag) ? '#1D7FC6' : 'auto'
             }}
-            onClick={() => handleSelectedTags(tag)}
+            onClick={() => handleTagsChange(tag)}
           >
             <Typography sx={{ color: isTagSelected(tag) ? 'white' : '#28282850' }}>#{tag}</Typography>
           </Grid>

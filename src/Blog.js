@@ -3,10 +3,9 @@ import React from 'react';
 import {Box, ThemeProvider} from "@mui/material";
 import { lightTheme } from './themes/light';
 import Navbar from "./components/navigation/Navbar";
-import {Wrapper} from "./shared/Wrapper";
+import {Wrapper} from "./shared/components/Wrapper";
 
-import {BlogList} from "./blog/BlogList";
-import posts from "./blog/posts/metadata";
+import {Outlet} from "react-router-dom";
 
 function Blog() {
 
@@ -15,7 +14,7 @@ function Blog() {
       <Box>
         <Navbar/>
         <Wrapper>
-          <BlogList posts={posts}/>
+          <Outlet/>
         </Wrapper>
       </Box>
     </ThemeProvider>

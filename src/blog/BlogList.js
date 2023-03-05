@@ -6,18 +6,18 @@ import {useState} from "react";
 
 export function BlogList({ posts }) {
 
-  const [metadataToShow, setMetadataToShow] = useState([]);
+  const [postsToShow, setPostsToShow] = useState([]);
   const [hasActiveFilter, setHasActiveFilter] = useState(false);
 
   return (
     <BlogListContainer direction="column" gap={2}>
       <FilterBar
         metadata={posts['content']}
-        handleFilteredMetadata={setMetadataToShow}
+        handleFilteredPosts={setPostsToShow}
         handleHasActiveFilters={setHasActiveFilter}
       />
 
-      {(hasActiveFilter ? metadataToShow : Object.values(posts['content'])).map((post) => (
+      {(hasActiveFilter ? postsToShow : Object.values(posts['content'])).map((post) => (
         <Link
           key={posts['index'][post.title]}
           to={`/blog/${posts['index'][post.title]}`}

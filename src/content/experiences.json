@@ -1,17 +1,48 @@
 {
-    "languages": [
-        {"ex": "+4y", "language": "Python"},
-        {"ex": "+5y", "language": "Java"},
-        {"ex": "+3y", "language": "SQL"},
-        {"ex": "+4y", "language": "Javascript"}
-    ],
-    "tools": [
-
-    ],
-    "frameworks": [
-
-    ],
-    "diverse": [
-
-    ]
+  "languages": [
+    {
+      "ex": "+4y",
+      "type": "gold",
+      "name": "Python"
+    },
+    {
+      "ex": "+5y",
+      "type": "silver",
+      "name": "Java"
+    },
+    {
+      "ex": "+3y",
+      "type": "silver",
+      "name": "SQL"
+    },
+    {
+      "ex": "+4y",
+      "type": "gold",
+      "name": "Javascript"
+    }
+  ],
+  "tools": [
+    {
+      "ex": "+4y",
+      "type": "gold",
+      "name": "Vscode"
+    }
+  ],
+  "frameworks": [
+    {
+      "ex": "+3y",
+      "type": "silver",
+      "name": "ReactJS"
+    },
+    {
+      "ex": "+1y",
+      "type": "silver",
+      "name": "Spring"
+    },
+    {
+      "ex": "+2mo",
+      "type": "bronze",
+      "name": "VueJS"
+    }
+  ]
 }

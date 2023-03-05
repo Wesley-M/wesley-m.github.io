@@ -9,7 +9,7 @@
     {
       "title": "N Puzzle",
       "image": "../images/npuzzle-thumbnail.png",
-      "description": "Experimenting with VueJS and creating a classical N Puzzle with some distinct features.",
+      "description": "Classical NxN sliding puzzle with different size configurations. It's an experiment that I designed with VueJS. Enjoy it!",
       "link": "http://slidingpz.netlify.app"
     },
     {

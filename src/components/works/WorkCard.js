@@ -1,73 +1,56 @@
 import React from "react";
-import {Box, Grid, Link, Stack, styled, Typography} from "@mui/material";
+import {alpha, Box, Button, Grid, styled} from "@mui/material";
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import {CardContainer, CardContent, CardDescription, CardImage, CardTitle} from "./WorkCard.styles";
 
-function WorkCard({ img, title, description, link }) {
-    const Image = styled("img")(() => ({
-        width: "100%",
-        height: "100%"
-    }));
+function WorkCard({img, title, description, link}) {
 
-    return (
-        <Grid container sx={{ margin: "1.5em 0em", boxShadow: 2 }}>
-            <Grid item xs={12} sm={5} md={3}>
-                <Image width="fit-content" src={img} alt="Work card"/>
-            </Grid>
-            <Grid item xs={12} sm={7} md={9}>
-                <Stack
-                    direction="column"
-                    sx={{
-                        padding: "0.8em 0",
-                        marginLeft: "1.5em",
-                        paddingRight: "1.5em",
-                        height: "100%"
-                    }}
-                >
-                    <Typography
-                        sx={{
-                            fontWeight: "600",
-                            fontSize: "1.5em",
-                            color: "#282828",
-                            fontFamily: "Nunito, sans-serif"
-                        }}
-                    >
-                        {title}
-                    </Typography>
-                    <Typography
-                        sx={{
-                            marginTop: "0.4em",
-                            fontWeight: "400",
-                            color: "#28282870",
-                            fontFamily: "Nunito, sans-serif",
-                            fontSize: { xs: "1em", sm: "1.1em", md: "1.15em", lg: "1.2em" }
-                        }}
-                    >
-                        {description}
-                    </Typography>
+  return (
+    <CardContainer container>
+      <Grid item xs={12} sm={5} md={3}>
+        <CardImage width="fit-content" src={img} alt="Work card"/>
+      </Grid>
+      <Grid item xs={12} sm={7} md={9}>
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
 
-                    <Box sx={{ flexGrow: 1 }}/>
+          <Box sx={{flexGrow: 1}}/>
 
-                    <Stack sx={{ marginTop: "1em" }} direction="row" alignItems="center" gap={1}>
-                        <Link
-                            target="_blank"
-                            href={link}
-                            sx={{
-                                fontFamily: "Nunito, sans-serif",
-                                fontSize: "1.3em",
-                                fontWeight: 600,
-                                textDecoration: "none",
-                                color: "#1D7FC6"
-                            }}
-                        >
-                            Link
-                        </Link>
-                        <OpenInNewIcon style={{ color: "#1D7FC6" }}/>
-                    </Stack>
-                </Stack>
-            </Grid>
-        </Grid>
-    )
+          <OpenWork link={link}/>
+        </CardContent>
+      </Grid>
+    </CardContainer>
+  )
+}
+
+const OpenWork = ({link}) => {
+  const BaseButton = styled(Button)(({theme}) => ({
+    border: `1px solid ${alpha(theme.palette.text.main, 0.5)}`,
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.text.main, 0.1)
+    },
+    [theme.breakpoints.up('xs')]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: "fit-content",
+    },
+  }));
+
+  return (
+    <BaseButton
+      variant="contained"
+      href={link}
+      size="small"
+      target="_blank"
+      endIcon={ <OpenInNewIcon/> }
+      disableElevation
+    >
+      Open
+    </BaseButton>
+  );
 }
 
 export default WorkCard

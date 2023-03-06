@@ -60,7 +60,7 @@ def get_file_metadadata(p, filename):
 
     # Default header
     header['author'] = 'Wesley Santos'
-    header['path'] = f'render/{filename}'
+    header['path'] = f'.render/{filename}'
     header['last_updated'] = int(path.getctime(f'{p}/{filename}'))
 
     last_prop = ''
@@ -91,8 +91,8 @@ def get_file_metadadata(p, filename):
     return header
 
 posts_path = '../posts'
-original_posts_path = f'{posts_path}/original'
-render_posts_path = f'{posts_path}/render'
+original_posts_path = f'{posts_path}/done'
+render_posts_path = f'{posts_path}/.render'
 post_filenames = listdir(original_posts_path)
 
 posts_metadata = []
@@ -113,8 +113,6 @@ for filename in post_filenames:
     add_readtime_estimation(post_metadata, post_content)
 
     posts_metadata.append(post_metadata)
-
-posts_metadata = sorted(posts_metadata, key=cmp_to_key(lambda x, y: x['last_updated'] - y['last_updated']))
 
 posts = { 
     'content': {},

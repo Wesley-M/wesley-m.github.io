@@ -29,7 +29,8 @@
   },
   "scripts": {
     "blog": "cd src/blog/scripts && python3 ./extract_post_metadata.py",
-    "prestart": "yarn blog",
+    "post-watcher": "(when-changed src/blog/posts/original -c yarn blog) &",
+    "prestart": "yarn post-watcher",
     "start": "react-scripts start",
     "prebuild": "yarn blog",
     "build": "react-scripts build",

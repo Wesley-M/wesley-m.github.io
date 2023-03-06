@@ -36,15 +36,6 @@
             "tags": "java, leetcode",
             "readtime": "4 min"
         },
-        "revisiting_java": {
-            "author": "Wesley Santos",
-            "path": "render/revisiting_java.md",
-            "last_updated": 1678021014,
-            "title": "Revisiting Java",
-            "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts",
-            "tags": "java",
-            "readtime": "1 min"
-        },
         "who_am_i": {
             "author": "Wesley Santos",
             "path": "render/who_am_i.md",
@@ -53,6 +44,15 @@
             "description": "Hi! In this post, I am going to talk a bit about myself, present my goals with the blog and show what will be the focus of the following posts. Stay tight and let's go!",
             "tags": "about me, goals",
             "readtime": "1 min"
+        },
+        "revisiting_java": {
+            "author": "Wesley Santos",
+            "path": "render/revisiting_java.md",
+            "last_updated": 1678132062,
+            "title": "Revisiting Java",
+            "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts",
+            "tags": "java",
+            "readtime": "1 min"
         }
     },
     "index": {
@@ -60,7 +60,7 @@
         "Partition Labels": "partition_labels",
         "Revisiting SQL": "revisiting_sql",
         "Starting my Leetcode Journey": "starting_leetcode_journey",
-        "Revisiting Java": "revisiting_java",
-        "Who am I ?": "who_am_i"
+        "Who am I ?": "who_am_i",
+        "Revisiting Java": "revisiting_java"
     }
 }

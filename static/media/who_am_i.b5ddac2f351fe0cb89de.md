@@ -11,7 +11,7 @@ recently graduated in Computer Science at the Federal University of
 Campina Grande (UFCG) - Brazil. My major interests are in Fullstack 
 development and Data Analysis.
 
-I am planning to use this blog for taking notes of interesting 
+I am planning to use this blog for <mark>taking notes</mark> of interesting 
 technologies, using it to study and apply best practices and 
 patterns, as well as improve my written english and dev skills.
 

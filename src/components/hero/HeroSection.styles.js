@@ -13,7 +13,8 @@ export const HeroContainer = styled(Grid)(({theme}) => ({
     height: "50vh",
   },
   marginTop: '5em',
-  position: 'relative'
+  position: 'relative',
+  backgroundColor: theme.palette.primary.main
 }));
 
 export const ProfileImageContainer = styled(Grid)(() => ({
@@ -49,6 +50,7 @@ export const Introduction = styled(Stack)(({theme}) => ({
 }));
 
 export const ProfileName = styled(Typography)(({theme}) => ({
+  color: theme.palette.text.main,
   fontSize: "1.9em",
   fontWeight: 700,
   [theme.breakpoints.up('xs')]: {
@@ -82,6 +84,7 @@ export const MessageContainer = styled(Box)(({theme}) => ({
 }));
 
 export const Message = styled(Typography)(({theme}) => ({
+  color: theme.palette.text.main,
   margin: 0,
   marginBottom: "1em",
   height: '1em',
@@ -110,6 +113,9 @@ const wave = keyframes`
 `;
 
 export const Waving = styled(Typography)(({theme}) => ({
+  "& path": {
+    fill: theme.palette.text.main,
+  },
   top: "0.25em",
   position: "relative",
   marginLeft: "0.75em",

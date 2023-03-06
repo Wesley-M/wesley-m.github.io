@@ -1,9 +1,10 @@
-import { Grid, InputBase, Stack, styled, Typography } from "@mui/material";
+import {alpha, Grid, InputBase, Stack, styled, Typography, useTheme} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { useCallback, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import { searchByQuery, searchByTag, tagsByOccurrence } from "../utils/search";
 import {useTags} from "../../shared/hooks/useTags";
+import {Search, SearchIconWrapper, StyledInputBase} from "./FilterBar.styles";
 
 export const FilterBar = (props) => {
   const {
@@ -11,7 +12,9 @@ export const FilterBar = (props) => {
     handleFilteredPosts,
     handleHasActiveFilters
   } = props;
-  
+
+  const theme = useTheme();
+
   /**
    * Current query being used
    */
@@ -80,60 +83,33 @@ export const FilterBar = (props) => {
         }}
       >
         {allTags.map(tag => (
-          <Grid item key={tag}
+          <TagContainer item key={tag}
             sx={{
-              padding: '0 0.4em',
-              margin: '0.2em',
-              borderRadius: '0.2em',
-              border: `2px solid ${isTagSelected(tag) ? '#1D7FC6' : '#28282820'}`,
-              fontWeight: 'bold',
-              '&:hover': {
-                cursor: 'pointer'
-              },
-              backgroundColor: isTagSelected(tag) ? '#1D7FC6' : 'auto'
+              border: `2px solid ${isTagSelected(tag) ? 'secondary.main' : alpha(theme.palette.text.main, 0.1)}`,
+              backgroundColor: isTagSelected(tag) ? 'secondary.main' : alpha(theme.palette.text.main, 0.05),
             }}
             onClick={() => handleTagsChange(tag)}
           >
-            <Typography sx={{ color: isTagSelected(tag) ? 'white' : '#28282850' }}>#{tag}</Typography>
-          </Grid>
+            <Typography
+              sx={{
+                color: isTagSelected(tag) ? 'white' : alpha(theme.palette.text.main, 0.6),
+              }}
+            >
+              #{tag}
+            </Typography>
+          </TagContainer>
         ))}
       </Grid>
     </Stack>
   )
 }
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  marginLeft: 0,
-  width: '100%',
-  '& .MuiSvgIcon-root': {
-    color: '#1D7FC6'
-  }
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  borderRadius: theme.shape.borderRadius,
-  border: '2px solid #28282820',
-  '&.Mui-focused': {
-    border: '2px solid #1D7FC6',
-  },
-  '&.MuiInputBase-root': {
-    width: '100%',
-  },
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    width: 'inherit',
+const TagContainer = styled(Grid)(({ theme }) => ({
+  padding: '0 0.4em',
+  margin: '0.2em',
+  borderRadius: '0.2em',
+  fontWeight: 'bold',
+  '&:hover': {
+    cursor: 'pointer'
   },
 }));

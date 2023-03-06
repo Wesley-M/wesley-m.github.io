@@ -1,6 +1,7 @@
 import {Grid, Stack} from "@mui/material";
 import ReactTimeAgo from 'react-time-ago';
 import {CardTitle, Description, PreviewContainer, Tag, UpdatedAt} from "./PostPreview.styles";
+import {POST_PREVIEW_DESCRIPTION} from "../config/config";
 
 export const PostPreview = (props) => {
 
@@ -24,7 +25,11 @@ export const PostPreview = (props) => {
           Last updated <ReactTimeAgo date={updatedAt * 1000} locale="en-US"/> · {readtime} read
         </UpdatedAt>
         <Description>
-          {description.substring(0, 240)}...
+          {description.length < POST_PREVIEW_DESCRIPTION ? (
+            description
+          ) : (
+            description.substring(0, POST_PREVIEW_DESCRIPTION) + "..."
+          )}
         </Description>
         <Stack direction="row" gap={1}>
           {arrayToTags(tags)}

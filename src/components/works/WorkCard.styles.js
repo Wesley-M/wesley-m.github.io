@@ -14,7 +14,7 @@ export const CardImage = styled("img")(({theme}) => ({
 export const CardContainer = styled(Grid)(({theme}) => ({
   margin: "1.5em 0em",
   borderRadius: "0.5em",
-  border: "1px solid lightgray"
+  border: `1px solid ${alpha(theme.palette.text.main, 0.15)}`
 }));
 
 export const CardContent = styled(Stack)(({theme}) => ({
@@ -27,13 +27,14 @@ export const CardContent = styled(Stack)(({theme}) => ({
 
 export const CardTitle = styled(Typography)(({theme}) => ({
   fontWeight: "600",
-  fontSize: "1.3em"
+  fontSize: "1.3em",
+  color: theme.palette.text.main
 }));
 
 export const CardDescription = styled(Typography)(({theme}) => ({
   marginTop: "0.4em",
   fontWeight: "400",
-  color: alpha(theme.palette.text.main, 0.4),
+  color: alpha(theme.palette.text.main, 0.6),
   paddingBottom: "1em",
   [theme.breakpoints.up('xs')]: {
     fontSize: "0.95em"

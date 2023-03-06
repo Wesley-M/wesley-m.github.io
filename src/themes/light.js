@@ -15,7 +15,13 @@ export const lightTheme = createTheme({
     colors: {
         gold: "#FFDD2B",
         silver: "#E8EBF0",
-        bronze: "#F19E3D"
+        bronze: "#F19E3D",
+        experiences: {
+            text: "#FFFFFF"
+        },
+        work: {
+            background: "#FFFFFF"
+        }
     },
     typography: {
         allVariants: {

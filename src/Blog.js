@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Box, ThemeProvider} from "@mui/material";
 import { lightTheme } from './themes/light';
+import { darkTheme } from './themes/dark';
 import Navbar from "./components/navigation/Navbar";
 import {Wrapper} from "./shared/components/Wrapper";
 
@@ -11,7 +12,7 @@ function Blog() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box sx={{ backgroundColor: 'primary.main', minHeight: "100%" }}>
         <Navbar/>
         <Wrapper>
           <Outlet/>

@@ -1,22 +1,22 @@
 import {alpha, Box, styled, Typography} from "@mui/material";
 
-export const ExperienceContainer = styled(Box)(() => ({
+export const ExperienceContainer = styled(Box)(({ theme }) => ({
   width: '100%',
   height: 'auto',
   position: 'relative',
-  backgroundColor: '#1D7FC6',
+  backgroundColor: theme.palette.secondary.main,
   padding: '1em 0'
 }));
 
 export const Section = styled(Typography)(({theme}) => ({
-  color: theme.palette.primary.main,
+  color: theme.colors.experiences.text,
   fontSize: "1.8em",
   fontWeight: 600,
   margin: "0 1em 0 0"
 }));
 
 export const SubSection = styled(Typography)(({theme}) => ({
-  color: alpha(theme.palette.primary.main, 0.8),
+  color: alpha(theme.colors.experiences.text, 0.8),
   fontSize: "1.2em",
   fontWeight: 500,
   marginTop: "0.8em",

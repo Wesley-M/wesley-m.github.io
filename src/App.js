@@ -7,6 +7,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/navigation/Navbar";
 import { Wrapper } from "./shared/components/Wrapper";
 import ExperienceSection from "./components/experiences/ExperienceSection";
+import { darkTheme } from './themes/dark';
 import { lightTheme } from './themes/light';
 
 import './App.css';
@@ -14,8 +15,8 @@ import './App.css';
 function App() {
 
   return (
-    <ThemeProvider theme={lightTheme}>
-      <Box>
+    <ThemeProvider theme={darkTheme}>
+      <Box sx={{ backgroundColor: 'primary.main' }}>
         <Navbar />
         <Wrapper>
           <HeroSection />

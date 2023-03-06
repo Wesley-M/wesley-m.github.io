@@ -38,6 +38,6 @@ export const Tag = styled(Typography)(({theme}) => ({
   fontWeight: 'bold',
   fontSize: '0.9em',
   borderRadius: '0.2em',
-  color: theme.palette.text.main,
+  color: theme.colors.work.background,
   backgroundColor: theme.palette.secondary.main
 }));

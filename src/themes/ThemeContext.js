@@ -9,10 +9,11 @@ export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem('theme');
 
-    if (storedTheme === 'dark') {
-      return 'dark';
+    if (storedTheme) {
+      return storedTheme;
     } else {
-      return 'light';
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
     }
   });
 

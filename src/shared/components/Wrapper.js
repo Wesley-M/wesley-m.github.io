@@ -6,8 +6,10 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   top: 0,
   width: '80%',
   margin: '0 10%',
+  height: '100%',
   [theme.breakpoints.down('md')]: {
     width: '90%',
-    margin: '0 5%'
+    margin: '0 5%',
+    height: '100%',
   }
 }))

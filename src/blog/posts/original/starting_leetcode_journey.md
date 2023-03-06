@@ -2,7 +2,6 @@
 title: Starting my Leetcode Journey
 description: Today I start practicing questions on leetcode! Here are my impressions and
 solutions for some questions.
-cover: https://cdn.iconscout.com/icon/free/png-256/leetcode-3521542-2944960.png
 tags: java, leetcode
 ---
 
@@ -22,6 +21,8 @@ We just need to mirror a binary tree here. So, after thinking a little about the
 with the following:
 
 ```java
+// Difficulty: EASY | Acceptance: 74.6%
+
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
@@ -31,7 +32,6 @@ class Solution {
     }
 }
 ```
-    Difficulty: *EASY* | Acceptance: 74.6%
 
 ---
 
@@ -40,6 +40,8 @@ class Solution {
 Following a similar logic, it's asked the maximum depth of a binary tree.
 
 ```java
+// Difficulty: EASY | Acceptance: 73.8%
+
 class Solution {
     public int maxDepth(TreeNode root) {
         if (root == null) {
@@ -49,7 +51,6 @@ class Solution {
     }
 }
 ```
-    Difficulty: *EASY* | Acceptance: 73.8%
 
 ---
 
@@ -60,6 +61,8 @@ class Solution {
 Simple Inorder traversal (LEFT -> ROOT -> RIGHT).
 
 ```java
+// Difficulty: EASY | Acceptance: 73.6%
+
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) {
@@ -75,15 +78,15 @@ class Solution {
     }
 }
 ```
-    Difficulty: *EASY* | Acceptance: 73.6%
-
 
 ### ITERATIVE
 
 The rust showed itself here. I forgot how to do iterative depth first search (DFS) and traversal. So, 
 I searched a bit and stumbled over the following algorithm: 
 
-```java
+```java {17}
+// Difficulty: EASY | Acceptance: 73.6%
+
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List traversal = new ArrayList<>();
@@ -98,7 +101,7 @@ class Solution {
             
             TreeNode top = st.pop();
             traversal.add(top.val);
-            pointer = top.right;           // (1)
+            pointer = top.right;
         }
     }
 }
@@ -107,12 +110,12 @@ class Solution {
 The idea is to use a stack to traverse the tree. We want to "remember" the last elements that we did 
 go over. In a DFS, we are going top to bottom, and working our way back again, so it's helpful.
 
-We first go over just the left nodes from the root. However, we also need a way to go over the right 
+We first go over just the left nodes from the root. However, we also need a way to pass on the right 
 ones, starting at the bottom, so we save the leftmost node, forget it (remembering who comes before it), 
 and change the pointer to the adjacent right node (1). In the cases that it has left nodes, it goes over 
 all of them, and repeats the process.
 
-The trick to the iterative logic is: "Every right node might have left nodes, remember all of them,
+The trick to the iterative logic is: "Every node might have left nodes, remember all of them,
 save the guy who has no left nodes anymore and remove it from the stack (your memory), and go on to 
 the next right".
 
@@ -129,6 +132,8 @@ An input string is valid if:
 - Every close bracket has a corresponding open bracket of the same type.
 
 ```java 
+// Difficulty: EASY | Acceptance: 40.3%
+
 class Solution {
     public boolean isValid(String s) {
         Stack<Character> p = new Stack<Character>();
@@ -156,7 +161,6 @@ class Solution {
     }
 }
 ```
-    Difficulty: *EASY* | Acceptance: 40.3%
 
 Pretty simple logic. I used a stack to remember the last open parentheses. When I find a match
 to the last one (and it has to appear sometime to be valid), we just need to pop the stack.

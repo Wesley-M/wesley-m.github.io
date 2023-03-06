@@ -12,6 +12,17 @@ export const lightTheme = createTheme({
             main: "#282828"
         }
     },
+    colors: {
+        gold: "#FFDD2B",
+        silver: "#E8EBF0",
+        bronze: "#F19E3D",
+        experiences: {
+            text: "#FFFFFF"
+        },
+        work: {
+            background: "#FFFFFF"
+        }
+    },
     typography: {
         allVariants: {
             fontFamily: 'Nunito, sans-serif',

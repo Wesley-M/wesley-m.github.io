@@ -20,7 +20,7 @@ function HeroSection() {
   return (
     <HeroContainer container spacing={2}>
       <ProfileImageContainer item xs={12} sm={12} md={4} lg={3}>
-        <ProfileImage src={photo} alt="My profile image"/>
+        <ProfileImage src={photo} loading="lazy" alt="My profile image"/>
       </ProfileImageContainer>
 
       <IntroductionContainer item xs={12} sm={12} md={8} lg={9}>

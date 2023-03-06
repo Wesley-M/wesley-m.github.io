@@ -1,26 +1,21 @@
-import { useState, useEffect } from "react"
-import Navbar from "../../components/navigation/Navbar";
-import { Box, styled, Typography } from "@mui/material";
-import { useParams } from "react-router-dom";
+import {useState, useEffect} from "react"
+import {Box, Skeleton} from "@mui/material";
+import {useParams} from "react-router-dom";
 import posts from '../posts/metadata.json';
-import { Markdown } from "./Markdown";
-import { convertTimestamp } from "../utils/time";
-import { AboutMe } from "./AboutMe";
-import { Wrapper } from "../../shared/Wrapper";
+import {Markdown} from "./Markdown";
+import {convertTimestamp} from "../utils/time";
+import {AboutMe} from "./AboutMe";
 import Giscus from "@giscus/react";
+import {PostHeader, PostWrapper} from "./Post.styles";
+import {useThemeContext} from "../../themes/ThemeContext";
 
 const Post = () => {
-  const Header = styled(Typography)(() => ({
-    color: '#282828',
-    opacity: 0.7,
-    fontSize: '0.9em',
-    marginBottom: '-1.5em'
-  }));
-
   let params = useParams();
 
-  const [postContent, setPostcontent] = useState('')
+  const [postContent, setPostcontent] = useState("")
   const post_metadata = posts['content'][params.id];
+
+  const { isDarkTheme } = useThemeContext();
 
   useEffect(() => {
     import(`../posts/${post_metadata.path}`)
@@ -30,32 +25,22 @@ const Post = () => {
           .then(response => setPostcontent(response))
           .catch(err => console.log(err))
       )
-  }, [params.id])
+  }, [params.id]);
 
   return (
-    <>
-      <Navbar />
-      <Wrapper>
-        <Box
-          sx={{
-            marginTop: '4em',
-            fontFamily: 'Nunito, sans-serif'
-          }}
-        >
-          {postContent !== '' ? (
-            <Header>
-              <span style={{ fontStyle: 'italic' }}>Published at</span>
-              {" " + convertTimestamp(post_metadata['last_updated'])}
-            </Header>
-          ) : null}
+    <PostWrapper>
+      {postContent !== '' ? (
+        <>
+          <PostHeader>
+            <span style={{fontStyle: 'italic'}}>Published at</span>
+            {" " + convertTimestamp(post_metadata['last_updated'])}
+          </PostHeader>
 
-          <Markdown content={postContent} />
+          <Markdown content={postContent}/>
 
-          {postContent !== '' ? (
-            <AboutMe />
-          ) : null}
+          <AboutMe/>
 
-          <Box sx={{ marginTop: "2em" }}>
+          <Box sx={{marginTop: "2em"}}>
             <Giscus
               id="comments"
               repo="Wesley-M/wesley-m.github.io"
@@ -67,14 +52,34 @@ const Post = () => {
               reactionsEnabled="1"
               emitMetadata="0"
               inputPosition="top"
-              theme="light"
+              theme={isDarkTheme ? "dark" : "light"}
               lang="en"
               loading="lazy"
             />
           </Box>
-        </Box>
-      </Wrapper>
-    </>
+        </>
+      ) : (
+        <>
+          <Skeleton width="30%"/>
+          <Skeleton sx={{ marginBottom: "2em" }} variant="text" height="12vh" width="90%"/>
+          <SkeletonParagraph lines={5}/>
+          <SkeletonParagraph lines={5}/>
+          <Skeleton variant="rectangular" height="20vh"/>
+          <Skeleton sx={{ marginTop: "2em" }}  variant="rectangular" height="40vh"/>
+        </>
+      )}
+    </PostWrapper>
+  )
+}
+
+const SkeletonParagraph = ({lines}) => {
+  const emptyArray = Array.apply(null, Array(lines));
+  return (
+    <Box sx={{ margin: "1em 0" }}>
+      {emptyArray.map((line, idx) => (
+        <Skeleton key={idx} variant="text" width={idx === lines - 1 ? "90%" : "100%"}/>
+      ))}
+    </Box>
   )
 }
 

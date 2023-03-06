@@ -1,8 +1,10 @@
 import React from 'react'
 
-import {AppBar, Box, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Stack, Toolbar, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import {Logo, NavLink} from "./Navbar.styles";
+import {ThemeSwitcher} from "../../themes/ThemeSwitcher";
+import SwipeableTemporaryDrawer from "./Sidebar";
 
 function Navbar() {
   return (
@@ -11,14 +13,14 @@ function Navbar() {
         position="fixed"
         elevation={0}
       >
-        <Toolbar sx={{ margin: '0 10%' }}>
+        <Toolbar sx={{ margin: '0 10%', padding: '0 4px' }}>
           <Logo to="/">
             <Typography>Portfolio</Typography>
           </Logo>
 
           <Box sx={{ flexGrow: 16 }} />
 
-          <Box>
+          <Box sx={{ display: { xs: 'none', sm: "flex" } , placeItems: 'center', gap: '1em' }}>
             <Link to="/blog" style={{ textDecoration: 'none' }}>
               <NavLink>
                 <Typography>Blog</Typography>
@@ -27,7 +29,13 @@ function Navbar() {
             <NavLink href="mailto:wesleymatteus99@gmail.com">
               <Typography>Contact Me</Typography>
             </NavLink>
+            <ThemeSwitcher/>
           </Box>
+
+          <Stack direction="row" gap={2} sx={{ display: { xs: 'flex', sm: "none" } }}>
+            <ThemeSwitcher/>
+            <SwipeableTemporaryDrawer/>
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,52 +1,18 @@
-import {Box, Stack, Typography} from "@mui/material";
+import {alpha, Box, Stack, styled, Typography} from "@mui/material";
 import Photo from "../../images/me.jpg"
-
+import content from '../../content/about.json'
+import {AboutContainer, AboutContent, AboutImage, AboutTitle} from "./AboutMe.styles";
 
 export const AboutMe = () => {
   return (
-      <Stack
-          direction="row"
-          spacing={2}
-          sx={{
-            backgroundColor: 'rgba(232,232,232,0.67)',
-            padding: '2em 1em',
-            borderRadius: '0.25em'
-          }}
-      >
+      <AboutContainer>
         <Box>
-          <img
-              src={Photo}
-              style={{
-                width: '5em',
-                height: '5em',
-                borderRadius: '2.5em'
-              }}
-          />
+          <AboutImage src={Photo} alt="Author's profile image"/>
         </Box>
         <Box>
-          <Typography
-            sx={{
-              fontWeight: 700,
-              color: '#282828',
-              opacity: 0.9,
-              fontFamily: 'Nunito, sans-serif'
-            }}
-          >
-            ABOUT ME
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: '0.9em',
-              color: '#282828',
-              opacity: 0.8,
-              fontFamily: 'Nunito, sans-serif'
-            }}
-          >
-            I am full stack developer based on Campina Grande - PB (Brazil). I've graduated from 
-            the Federal University of Campina Grande. I am most interested in Fullstack development 
-            and Data Analysis. My languages of choice are Javascript, Java, Python and R.
-          </Typography>
+          <AboutTitle>ABOUT ME</AboutTitle>
+          <AboutContent>{content.about.join("\n")}</AboutContent>
         </Box>
-      </Stack>
+      </AboutContainer>
   )
 }

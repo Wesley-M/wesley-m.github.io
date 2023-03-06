@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[945],{9945:function(e,o,p){e.exports=p.p+"static/media/grasp.31d6cfe0d16ae931b73c.md"}}]);

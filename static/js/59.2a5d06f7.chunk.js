@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[59],{6059:function(t,o,a){t.exports=a.p+"static/media/partition_labels.3977aab7fddf168013c6.md"}}]);

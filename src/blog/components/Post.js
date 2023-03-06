@@ -7,12 +7,15 @@ import {convertTimestamp} from "../utils/time";
 import {AboutMe} from "./AboutMe";
 import Giscus from "@giscus/react";
 import {PostHeader, PostWrapper} from "./Post.styles";
+import {useThemeContext} from "../../themes/ThemeContext";
 
 const Post = () => {
   let params = useParams();
 
   const [postContent, setPostcontent] = useState("")
   const post_metadata = posts['content'][params.id];
+
+  const { isDarkTheme } = useThemeContext();
 
   useEffect(() => {
     import(`../posts/${post_metadata.path}`)
@@ -49,7 +52,7 @@ const Post = () => {
               reactionsEnabled="1"
               emitMetadata="0"
               inputPosition="top"
-              theme="light"
+              theme={isDarkTheme ? "dark" : "light"}
               lang="en"
               loading="lazy"
             />

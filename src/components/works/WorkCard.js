@@ -27,10 +27,14 @@ function WorkCard({img, title, description, link}) {
 
 const OpenWork = ({link}) => {
   const BaseButton = styled(Button)(({theme}) => ({
-    border: `1px solid ${alpha(theme.palette.text.main, 0.3)}`,
+    backgroundColor: alpha(theme.palette.text.main, 0.1),
     color: alpha(theme.palette.text.main, 0.7),
     "&:hover": {
-      backgroundColor: alpha(theme.palette.text.main, 0.1)
+      backgroundColor: alpha(theme.palette.text.main, 0.15),
+      color: alpha(theme.palette.text.main, 0.8),
+      "& .MuiSvgIcon-root": {
+        fill: alpha(theme.palette.text.main, 0.8),
+      },
     },
     "& .MuiSvgIcon-root": {
       fill: alpha(theme.palette.text.main, 0.7),

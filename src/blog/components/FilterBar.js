@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useCallback, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import { searchByQuery, searchByTag, tagsByOccurrence } from "../utils/search";
-import {useTags} from "../../shared/hooks/useTags";
+import {useTags} from "../../hooks/useTags";
 import {Search, SearchIconWrapper, StyledInputBase} from "./FilterBar.styles";
 
 export const FilterBar = (props) => {

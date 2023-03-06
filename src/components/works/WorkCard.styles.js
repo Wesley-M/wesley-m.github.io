@@ -1,5 +1,12 @@
 import {alpha, Grid, Stack, styled, Typography} from "@mui/material";
 
+
+export const CardContainer = styled(Grid)(({theme}) => ({
+  margin: "1.5em 0em",
+  borderRadius: "0.5em",
+  backgroundColor: alpha(theme.palette.text.main, 0.05)
+}));
+
 export const CardImage = styled("img")(({theme}) => ({
   width: "100%",
   height: "100%",
@@ -9,12 +16,6 @@ export const CardImage = styled("img")(({theme}) => ({
   [theme.breakpoints.up('sm')]: {
     borderRadius: '0.5em 0 0 0.5em'
   }
-}));
-
-export const CardContainer = styled(Grid)(({theme}) => ({
-  margin: "1.5em 0em",
-  borderRadius: "0.5em",
-  border: `1px solid ${alpha(theme.palette.text.main, 0.15)}`
 }));
 
 export const CardContent = styled(Stack)(({theme}) => ({

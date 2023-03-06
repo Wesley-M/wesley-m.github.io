@@ -11,6 +11,7 @@ import rangeParser from 'parse-numeric-range'
 import rehypeRaw from "rehype-raw";
 import {alpha, css, useTheme} from "@mui/material";
 import {Global} from "@emotion/react";
+import {useThemeContext} from "../../themes/ThemeContext";
 
 // Setting up the supported languages
 SyntaxHighlighter.registerLanguage('java', java)
@@ -24,12 +25,13 @@ export const Markdown = (props) => {
   } = props;
 
   const theme = useTheme();
+  const { isDarkTheme } = useThemeContext();
 
   // The syntax highlighter
   const MarkdownComponents = {
     code({node, inline, className, ...props}) {
 
-      const syntaxTheme = oneDark;
+      const syntaxTheme = isDarkTheme ? oneDark : oneLight;
 
       const match = /language-(\w+)/.exec(className || '')
       const hasMeta = node?.data?.meta

@@ -3,6 +3,7 @@ import React from 'react'
 import {AppBar, Box, Toolbar, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import {Logo, NavLink} from "./Navbar.styles";
+import {ThemeSwitcher} from "../../themes/ThemeSwitcher";
 
 function Navbar() {
   return (
@@ -27,6 +28,7 @@ function Navbar() {
             <NavLink href="mailto:wesleymatteus99@gmail.com">
               <Typography>Contact Me</Typography>
             </NavLink>
+            <ThemeSwitcher/>
           </Box>
         </Toolbar>
       </AppBar>

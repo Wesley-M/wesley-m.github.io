@@ -15,12 +15,31 @@ import {
 
 import textToType from "../../content/type.json"
 import photo from "../../images/me.jpg"
+import {useState} from "react";
+import {Skeleton} from "@mui/material";
 
 function HeroSection() {
+  const [isImageLoaded, setImageLoadStatus] = useState(false);
+
   return (
     <HeroContainer container spacing={2}>
       <ProfileImageContainer item xs={12} sm={12} md={4} lg={3}>
-        <ProfileImage src={photo} loading="lazy" alt="My profile image"/>
+          <ProfileImage
+            onLoad={() => setImageLoadStatus(true)}
+            src={photo}
+            loading="lazy"
+            alt="My profile image"
+            sx={{ display: isImageLoaded ? 'flex' : 'none' }}
+          />
+          <Skeleton
+            variant="rounded"
+            sx={{
+              display: isImageLoaded ? 'none' : 'flex',
+              width: "16em",
+              height: "16em",
+              borderRadius: "1em"
+            }}
+          />
       </ProfileImageContainer>
 
       <IntroductionContainer item xs={12} sm={12} md={8} lg={9}>

@@ -60,7 +60,7 @@ def get_file_metadadata(p, filename):
 
     # Default header
     header['author'] = 'Wesley Santos'
-    header['path'] = f'.render/{filename}'
+    header['path'] = f'render/{filename}'
     header['last_updated'] = int(path.getctime(f'{p}/{filename}'))
 
     last_prop = ''
@@ -92,7 +92,7 @@ def get_file_metadadata(p, filename):
 
 posts_path = '../posts'
 original_posts_path = f'{posts_path}/done'
-render_posts_path = f'{posts_path}/.render'
+render_posts_path = f'{posts_path}/render'
 post_filenames = listdir(original_posts_path)
 
 posts_metadata = []

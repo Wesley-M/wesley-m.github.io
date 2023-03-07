@@ -2,7 +2,7 @@
     "content": {
         "revisiting_sql": {
             "author": "Wesley Santos",
-            "path": ".render/revisiting_sql.md",
+            "path": "render/revisiting_sql.md",
             "last_updated": 1678020592,
             "title": "Revisiting SQL",
             "description": "Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.",
@@ -11,7 +11,7 @@
         },
         "starting_leetcode_journey": {
             "author": "Wesley Santos",
-            "path": ".render/starting_leetcode_journey.md",
+            "path": "render/starting_leetcode_journey.md",
             "last_updated": 1678020599,
             "title": "Starting my Leetcode Journey",
             "description": "Today I start practicing questions on leetcode! Here are my impressions and solutions for some questions.",
@@ -20,7 +20,7 @@
         },
         "lawyers_problem": {
             "author": "Wesley Santos",
-            "path": ".render/lawyers_problem.md",
+            "path": "render/lawyers_problem.md",
             "last_updated": 1678020577,
             "title": "Lawyers problem [2737]",
             "description": "Solving the lawyers problem on beecrowd",
@@ -29,7 +29,7 @@
         },
         "who_am_i": {
             "author": "Wesley Santos",
-            "path": ".render/who_am_i.md",
+            "path": "render/who_am_i.md",
             "last_updated": 1678135110,
             "title": "Who am I ?",
             "description": "Hi! In this post, I am going to talk a bit about myself, present my goals with the blog and show what will be the focus of the following posts. Stay tight and let's go!",
@@ -38,8 +38,8 @@
         },
         "partition_labels": {
             "author": "Wesley Santos",
-            "path": ".render/partition_labels.md",
-            "last_updated": 1678020584,
+            "path": "render/partition_labels.md",
+            "last_updated": 1678145463,
             "title": "Partition Labels",
             "description": "Let's study an interesting problem.",
             "tags": "java, leetcode",

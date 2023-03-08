@@ -6,7 +6,7 @@ import {Logo, NavLink} from "./Navbar.styles";
 import {ThemeSwitcher} from "../../themes/ThemeSwitcher";
 import SwipeableTemporaryDrawer from "./Sidebar";
 
-function Navbar() {
+function Navbar({ isBlog }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -14,16 +14,16 @@ function Navbar() {
         elevation={0}
       >
         <Toolbar sx={{ margin: '0 10%', padding: '0 4px' }}>
-          <Logo to="/">
-            <Typography>Portfolio</Typography>
+          <Logo to={isBlog ? "/blog" : "/"}>
+            <Typography>{isBlog ? "Blog" : "Portfolio"}</Typography>
           </Logo>
 
           <Box sx={{ flexGrow: 16 }} />
 
           <Box sx={{ display: { xs: 'none', sm: "flex" } , placeItems: 'center', gap: '1em' }}>
-            <Link to="/blog" style={{ textDecoration: 'none' }}>
+            <Link to={isBlog ? "/" : "/blog"} style={{ textDecoration: 'none' }}>
               <NavLink>
-                <Typography>Blog</Typography>
+                <Typography>{isBlog ? "Portfolio" : "Blog"}</Typography>
               </NavLink>
             </Link>
             <NavLink href="mailto:wesleymatteus99@gmail.com">

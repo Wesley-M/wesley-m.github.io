@@ -5,7 +5,7 @@ import WorkSection from './components/works/WorkSection';
 
 import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/navigation/Navbar";
-import { Wrapper } from "./shared/components/Wrapper";
+import { Wrapper } from "./components/layout/Wrapper";
 import ExperienceSection from "./components/experiences/ExperienceSection";
 import { darkTheme } from './themes/schemes/dark';
 

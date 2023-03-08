@@ -12,10 +12,12 @@ import rehypeRaw from "rehype-raw";
 import {alpha, css, useTheme} from "@mui/material";
 import {Global} from "@emotion/react";
 import {useThemeContext} from "../../themes/ThemeContext";
+import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
 // Setting up the supported languages
 SyntaxHighlighter.registerLanguage('java', java)
 SyntaxHighlighter.registerLanguage('sql', sql)
+SyntaxHighlighter.registerLanguage('bash', bash)
 SyntaxHighlighter.registerLanguage('javascript', javascript)
 SyntaxHighlighter.registerLanguage('python', python)
 

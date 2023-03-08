@@ -1,7 +1,7 @@
 import WorkCard from './WorkCard'
 
 import {Stack, Typography} from "@mui/material";
-import {Wrapper} from "../../shared/components/Wrapper";
+import {Wrapper} from "../layout/Wrapper";
 
 import content from "../../content/works.json"
 import {Section} from "./WorkSection.styles";

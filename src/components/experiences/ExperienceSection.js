@@ -1,4 +1,4 @@
-import {Wrapper} from "../../shared/components/Wrapper";
+import {Wrapper} from "../layout/Wrapper";
 
 import experiences from "../../content/experiences.json";
 import {

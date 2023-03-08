@@ -27,7 +27,7 @@ function HeroSection() {
           <ProfileImage
             onLoad={() => setImageLoadStatus(true)}
             src={photo}
-            loading="lazy"
+            loading="eager"
             alt="My profile image"
             sx={{ display: isImageLoaded ? 'flex' : 'none' }}
           />

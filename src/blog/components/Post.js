@@ -52,7 +52,7 @@ const Post = () => {
               reactionsEnabled="1"
               emitMetadata="0"
               inputPosition="top"
-              theme={isDarkTheme ? "dark" : "light"}
+              theme={isDarkTheme ? "dark_dimmed" : "light"}
               lang="en"
               loading="lazy"
             />

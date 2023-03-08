@@ -7,6 +7,25 @@ import json
 from functools import cmp_to_key
 from os import listdir, path
 import readtime
+import glob
+import sys
+
+args = sys.argv
+
+if (len(args) < 2):
+    print("Pass the posts folder")
+    exit(1)
+
+writing_folder = args[1]
+
+posts_path = '../posts'
+original_posts_path = f'{posts_path}/{writing_folder}'
+render_posts_path = f'{posts_path}/render'
+
+post_filepaths = glob.glob(f'{original_posts_path}/*.md')
+post_filenames = map(lambda p : p.split('/')[-1], post_filepaths)
+
+posts_metadata = []
 
 def write_file_without_metadata(old_path, new_path, filename, post_title):
     # list to store file lines
@@ -89,13 +108,6 @@ def get_file_metadadata(p, filename):
                     last_prop = prop_value[0]
 
     return header
-
-posts_path = '../posts'
-original_posts_path = f'{posts_path}/done'
-render_posts_path = f'{posts_path}/render'
-post_filenames = listdir(original_posts_path)
-
-posts_metadata = []
 
 # All the current metadata from the posts
 for filename in post_filenames:

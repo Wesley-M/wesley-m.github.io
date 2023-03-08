@@ -1,56 +1,36 @@
 {
     "content": {
-        "revisiting_sql": {
+        "spring_boot_hello": {
             "author": "Wesley Santos",
-            "path": "render/revisiting_sql.md",
-            "last_updated": 1678020592,
-            "title": "Revisiting SQL",
-            "description": "Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.",
-            "tags": "sql",
+            "path": "render/spring_boot_hello.md",
+            "last_updated": 1678236806,
+            "title": "[SBS] #1 Hello World",
+            "description": "We are going to start small, let's see a simple Hello World.",
+            "tags": "java, spring boot's series",
             "readtime": "2 min"
         },
-        "starting_leetcode_journey": {
+        "spring_boot_questions": {
             "author": "Wesley Santos",
-            "path": "render/starting_leetcode_journey.md",
-            "last_updated": 1678020599,
-            "title": "Starting my Leetcode Journey",
-            "description": "Today I start practicing questions on leetcode! Here are my impressions and solutions for some questions.",
-            "tags": "java, leetcode",
-            "readtime": "4 min"
-        },
-        "lawyers_problem": {
-            "author": "Wesley Santos",
-            "path": "render/lawyers_problem.md",
-            "last_updated": 1678020577,
-            "title": "Lawyers problem [2737]",
-            "description": "Solving the lawyers problem on beecrowd",
-            "tags": "beecrowd, sql",
-            "readtime": "2 min"
-        },
-        "who_am_i": {
-            "author": "Wesley Santos",
-            "path": "render/who_am_i.md",
-            "last_updated": 1678135110,
-            "title": "Who am I ?",
-            "description": "Hi! In this post, I am going to talk a bit about myself, present my goals with the blog and show what will be the focus of the following posts. Stay tight and let's go!",
-            "tags": "about me, goals",
+            "path": "render/spring_boot_questions.md",
+            "last_updated": 1678236131,
+            "title": "[SBS] Spring Boot Series",
+            "description": "in this post I am going to introduce the first series on the blog, about Spring Boot.",
+            "tags": "java, spring boot's series",
             "readtime": "1 min"
         },
-        "partition_labels": {
+        "revisiting_java": {
             "author": "Wesley Santos",
-            "path": "render/partition_labels.md",
-            "last_updated": 1678145463,
-            "title": "Partition Labels",
-            "description": "Let's study an interesting problem.",
-            "tags": "java, leetcode",
-            "readtime": "3 min"
+            "path": "render/revisiting_java.md",
+            "last_updated": 1678134122,
+            "title": "Revisiting Java",
+            "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts",
+            "tags": "java",
+            "readtime": "1 min"
         }
     },
     "index": {
-        "Revisiting SQL": "revisiting_sql",
-        "Starting my Leetcode Journey": "starting_leetcode_journey",
-        "Lawyers problem [2737]": "lawyers_problem",
-        "Who am I ?": "who_am_i",
-        "Partition Labels": "partition_labels"
+        "[SBS] #1 Hello World": "spring_boot_hello",
+        "[SBS] Spring Boot Series": "spring_boot_questions",
+        "Revisiting Java": "revisiting_java"
     }
 }

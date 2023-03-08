@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[241],{9241:function(o,t,e){o.exports=e.p+"static/media/spring_boot_hello.8a502192d9d035bc2298.md"}}]);

@@ -2,7 +2,11 @@ import {alpha, Grid, styled, Typography} from "@mui/material";
 
 export const PreviewContainer = styled(Grid)(({theme}) => ({
   borderRadius: '0.25em',
-  border: `2px solid ${alpha(theme.palette.text.main, 0.1)}`
+  border: `2px solid ${alpha(theme.palette.text.main, 0.1)}`,
+  transition: 'border 300ms ease',
+  '&:hover': {
+    border: `2px solid ${alpha(theme.palette.secondary.main, 0.3)}`
+  }
 }));
 
 export const CardTitle = styled(Typography)(({theme}) => ({

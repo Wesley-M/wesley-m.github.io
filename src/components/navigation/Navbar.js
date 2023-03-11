@@ -26,6 +26,9 @@ function Navbar({ isBlog }) {
                 <Typography>{isBlog ? "Portfolio" : "Blog"}</Typography>
               </NavLink>
             </Link>
+            <NavLink href="/#/blog/who_am_i">
+              <Typography>About</Typography>
+            </NavLink>
             <NavLink href="mailto:wesleymatteus99@gmail.com">
               <Typography>Contact Me</Typography>
             </NavLink>

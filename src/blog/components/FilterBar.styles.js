@@ -1,4 +1,4 @@
-import {alpha, InputBase, styled} from "@mui/material";
+import {alpha, Grid, InputBase, styled, Typography} from "@mui/material";
 
 export const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -37,4 +37,24 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     width: 'inherit',
   },
+}));
+
+export const TagContainer = styled(Grid, {
+  shouldForwardProp: (prop) => prop !== "selected"
+})(({ theme, selected }) => ({
+  padding: '0 0.4em',
+  margin: '0.2em',
+  borderRadius: '0.2em',
+  fontWeight: 'bold',
+  border: `2px solid ${selected ? theme.palette.secondary.main : alpha(theme.palette.text.main, 0.1)}`,
+  backgroundColor: selected ? theme.palette.secondary.main : alpha(theme.palette.text.main, 0.05),
+  '&:hover': {
+    cursor: 'pointer'
+  },
+}));
+
+export const Tag = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "selected"
+})(({ theme, selected }) => ({
+  color: selected ? 'white' : alpha(theme.palette.text.main, 0.6)
 }));

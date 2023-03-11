@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import { searchByQuery, searchByTag, tagsByOccurrence } from "../utils/search";
 import {useTags} from "../../hooks/useTags";
-import {Search, SearchIconWrapper, StyledInputBase} from "./FilterBar.styles";
+import {Search, SearchIconWrapper, StyledInputBase, Tag, TagContainer} from "./FilterBar.styles";
 
 export const FilterBar = (props) => {
   const {
@@ -12,8 +12,6 @@ export const FilterBar = (props) => {
     handleFilteredPosts,
     handleHasActiveFilters
   } = props;
-
-  const theme = useTheme();
 
   /**
    * Current query being used
@@ -31,7 +29,7 @@ export const FilterBar = (props) => {
   const [postsToSearch, setPostsToSearch] = useState(() => Object.values(metadata))
 
   /**
-   * Updates the posts that will be searched over
+   * Updates the posts that will be searched over when some tag changes
    */
   const onTagsChange = (newTags) => {
     const filteredByTags = searchByTag(Object.values(metadata), newTags);
@@ -77,39 +75,19 @@ export const FilterBar = (props) => {
         />
       </Search>
 
-      <Grid container
-        sx={{
-          marginTop: '0.5em'
-        }}
-      >
+      <Grid container sx={{ marginTop: '0.5em' }}>
         {allTags.map(tag => (
-          <TagContainer item key={tag}
-            sx={{
-              border: `2px solid ${isTagSelected(tag) ? 'secondary.main' : alpha(theme.palette.text.main, 0.1)}`,
-              backgroundColor: isTagSelected(tag) ? 'secondary.main' : alpha(theme.palette.text.main, 0.05),
-            }}
+          <TagContainer item
+            key={tag}
+            selected={isTagSelected(tag)}
             onClick={() => handleTagsChange(tag)}
           >
-            <Typography
-              sx={{
-                color: isTagSelected(tag) ? 'white' : alpha(theme.palette.text.main, 0.6),
-              }}
-            >
+            <Tag selected={isTagSelected(tag)}>
               #{tag}
-            </Typography>
+            </Tag>
           </TagContainer>
         ))}
       </Grid>
     </Stack>
   )
 }
-
-const TagContainer = styled(Grid)(({ theme }) => ({
-  padding: '0 0.4em',
-  margin: '0.2em',
-  borderRadius: '0.2em',
-  fontWeight: 'bold',
-  '&:hover': {
-    cursor: 'pointer'
-  },
-}));

@@ -90,6 +90,12 @@ export default function SwipeableTemporaryDrawer() {
                 </ListItem>
                 <Divider/>
                 <ListItem disablePadding>
+                  <ListItemButton href="/#/blog/who_am_i">
+                    <ListItemText primary="About"/>
+                  </ListItemButton>
+                </ListItem>
+                <Divider/>
+                <ListItem disablePadding>
                   <ListItemButton href="mailto:wesleymatteus99@gmail.com">
                     <ListItemText primary="Contact me"/>
                   </ListItemButton>

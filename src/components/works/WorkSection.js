@@ -20,7 +20,7 @@ function WorkSection() {
 
     return (
         <Wrapper>
-            <Section>Works</Section>
+            <Section>Projects</Section>
             <Stack direction="column">
                 {cards}
             </Stack>

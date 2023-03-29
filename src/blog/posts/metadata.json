@@ -1,5 +1,14 @@
 {
     "content": {
+        "java_streams": {
+            "author": "Wesley Santos",
+            "path": "render/java_streams.md",
+            "last_updated": 1679171218,
+            "title": "Java Streams",
+            "description": "In this post, I am going to explore and apply the concept of Java Streams.",
+            "tags": "java",
+            "readtime": "6 min"
+        },
         "starting_leetcode_journey": {
             "author": "Wesley Santos",
             "path": "render/starting_leetcode_journey.md",
@@ -38,6 +47,7 @@
         }
     },
     "index": {
+        "Java Streams": "java_streams",
         "Starting my Leetcode Journey": "starting_leetcode_journey",
         "Lawyers problem [2737]": "lawyers_problem",
         "Who am I ?": "who_am_i",

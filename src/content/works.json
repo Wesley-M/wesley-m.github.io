@@ -17,6 +17,12 @@
       "image": "../images/tomatimer-thumbnail.png",
       "description": "Simple pomodoro-inspired task timer. Here, I experiment with Chakra UI, Typescript and React.",
       "link": "http://toma-timer.netlify.app"
+    },
+    {
+      "title": "Poetree",
+      "image": "../images/poetree-thumbnail.png",
+      "description": "App for reading public domain poems. It's developed with React, Typescript, MongoDB and NodeJS. All poems were scraped with Scrapy from 'https://public-domain-poetry.com.'",
+      "link": "https://poetree-main.netlify.app"
     }
   ]
 }

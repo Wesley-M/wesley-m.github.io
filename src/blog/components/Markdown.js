@@ -142,7 +142,7 @@ export const Markdown = (props) => {
           .post mark {
             padding: 0 0.5em;
             border-radius: 0.3em;
-            background-color: ${alpha(theme.palette.secondary.main, 0.5)}
+            background-color: ${alpha(theme.palette.secondary.main, 0.5)};
           }
         `}
       />

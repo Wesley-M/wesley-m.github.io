@@ -79,7 +79,7 @@ def get_file_metadadata(p, filename):
 
     # Default header
     header['author'] = 'Wesley Santos'
-    header['path'] = f'render/{filename}'
+    header['path'] = filename
     header['last_updated'] = int(path.getctime(f'{p}/{filename}'))
 
     last_prop = ''
@@ -133,7 +133,7 @@ posts = {
 
 # Formatting JSON to write
 for idx, post in enumerate(posts_metadata):
-    filepath = post['path'].split("/")[1]
+    filepath = post['path']
     url_id = filepath.split(".")[0]
     posts['content'][url_id] = post
     posts['index'][post['title']] = url_id

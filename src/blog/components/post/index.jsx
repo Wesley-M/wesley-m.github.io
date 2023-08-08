@@ -48,9 +48,11 @@ export const Post = () => {
 
           <Markdown content={postContent} />
 
-          <AboutMe />
+          <Box marginTop={5}>
+            <AboutMe />
+          </Box>
 
-          <Box sx={{ marginTop: '2em' }}>
+          <Box marginTop={5}>
             <Giscus
               id="comments"
               repo="Wesley-M/wesley-m.github.io"

@@ -6,13 +6,13 @@ tight and let's go!
 tags: about me, goals
 ---
 
-Hey! Thanks for stopping by :smile:. My name is Wesley, and I am an aspiring
+Hey! Thanks for stopping by :smile:. My name is Wesley, and I am a
 Fullstack Web Developer. I've recently graduated in Computer Science at the
 Federal University of Campina Grande (UFCG) - Brazil. Previously I also have
 taken a course on informatics in High-school (IFRN).
 
 On my university days, I focused mainly in R&D on Distributed File Systems.
-However, my real passion is developing interactive web apps, like games and
+However, my passion is developing interactive web apps, like games and
 useful/playful systems.
 
 One of my favorite things to do is to learn new things and to apply them. As

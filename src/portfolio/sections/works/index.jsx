@@ -13,7 +13,7 @@ export function WorkSection () {
   return (
     <Wrapper>
       <SectionTitle>{t('portfolio.works.title')}</SectionTitle>
-      <Grid container spacing={-1}>
+      <Grid container spacing={1}>
         {cards}
       </Grid>
     </Wrapper>

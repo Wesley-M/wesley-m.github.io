@@ -7,6 +7,25 @@ import json
 from functools import cmp_to_key
 from os import listdir, path
 import readtime
+import glob
+import sys
+
+args = sys.argv
+
+if (len(args) < 2):
+    print("Pass the posts folder")
+    exit(1)
+
+writing_folder = args[1]
+
+posts_path = '../posts'
+original_posts_path = f'{posts_path}/{writing_folder}'
+render_posts_path = f'{posts_path}/render'
+
+post_filepaths = glob.glob(f'{original_posts_path}/*.md')
+post_filenames = map(lambda p : p.split('/')[-1], post_filepaths)
+
+posts_metadata = []
 
 def write_file_without_metadata(old_path, new_path, filename, post_title):
     # list to store file lines
@@ -60,7 +79,7 @@ def get_file_metadadata(p, filename):
 
     # Default header
     header['author'] = 'Wesley Santos'
-    header['path'] = f'render/{filename}'
+    header['path'] = filename
     header['last_updated'] = int(path.getctime(f'{p}/{filename}'))
 
     last_prop = ''
@@ -90,13 +109,6 @@ def get_file_metadadata(p, filename):
 
     return header
 
-posts_path = '../posts'
-original_posts_path = f'{posts_path}/original'
-render_posts_path = f'{posts_path}/render'
-post_filenames = listdir(original_posts_path)
-
-posts_metadata = []
-
 # All the current metadata from the posts
 for filename in post_filenames:
     post_metadata = get_file_metadadata(original_posts_path, filename)
@@ -114,8 +126,6 @@ for filename in post_filenames:
 
     posts_metadata.append(post_metadata)
 
-posts_metadata = sorted(posts_metadata, key=cmp_to_key(lambda x, y: x['last_updated'] - y['last_updated']))
-
 posts = { 
     'content': {},
     'index': {}
@@ -123,7 +133,7 @@ posts = {
 
 # Formatting JSON to write
 for idx, post in enumerate(posts_metadata):
-    filepath = post['path'].split("/")[1]
+    filepath = post['path']
     url_id = filepath.split(".")[0]
     posts['content'][url_id] = post
     posts['index'][post['title']] = url_id

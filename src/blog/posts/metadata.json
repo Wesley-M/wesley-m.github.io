@@ -1,66 +1,56 @@
 {
     "content": {
-        "lawyers_problem": {
+        "java_streams": {
             "author": "Wesley Santos",
-            "path": "render/lawyers_problem.md",
-            "last_updated": 1678020577,
-            "title": "Lawyers problem [2737]",
-            "description": "Solving the lawyers problem on beecrowd",
-            "tags": "beecrowd, sql",
-            "readtime": "2 min"
-        },
-        "partition_labels": {
-            "author": "Wesley Santos",
-            "path": "render/partition_labels.md",
-            "last_updated": 1678020584,
-            "title": "Partition Labels",
-            "description": "Let's study an interesting problem.",
-            "tags": "java, leetcode",
-            "readtime": "3 min"
-        },
-        "revisiting_sql": {
-            "author": "Wesley Santos",
-            "path": "render/revisiting_sql.md",
-            "last_updated": 1678020592,
-            "title": "Revisiting SQL",
-            "description": "Hello! In this post I am going to revisit SQL. In the lenses of PostgreSQL.",
-            "tags": "sql",
-            "readtime": "2 min"
+            "path": "java_streams.md",
+            "last_updated": 1691407832,
+            "title": "Java Streams",
+            "description": "   In this post, I am going to explore and apply the concept of Java Streams.",
+            "tags": "java",
+            "readtime": "6 min"
         },
         "starting_leetcode_journey": {
             "author": "Wesley Santos",
-            "path": "render/starting_leetcode_journey.md",
-            "last_updated": 1678020599,
+            "path": "starting_leetcode_journey.md",
+            "last_updated": 1691407832,
             "title": "Starting my Leetcode Journey",
             "description": "Today I start practicing questions on leetcode! Here are my impressions and solutions for some questions.",
             "tags": "java, leetcode",
             "readtime": "4 min"
         },
-        "revisiting_java": {
+        "lawyers_problem": {
             "author": "Wesley Santos",
-            "path": "render/revisiting_java.md",
-            "last_updated": 1678021014,
-            "title": "Revisiting Java",
-            "description": "Hello! In this post I am going to revisit Java. From simple to more advanced concepts",
-            "tags": "java",
-            "readtime": "1 min"
+            "path": "lawyers_problem.md",
+            "last_updated": 1691407832,
+            "title": "Lawyers problem [2737]",
+            "description": "Solving the lawyers problem on beecrowd",
+            "tags": "beecrowd, sql",
+            "readtime": "2 min"
         },
         "who_am_i": {
             "author": "Wesley Santos",
-            "path": "render/who_am_i.md",
-            "last_updated": 1678046663,
+            "path": "who_am_i.md",
+            "last_updated": 1691502198,
             "title": "Who am I ?",
             "description": "Hi! In this post, I am going to talk a bit about myself, present my goals with the blog and show what will be the focus of the following posts. Stay tight and let's go!",
             "tags": "about me, goals",
             "readtime": "1 min"
+        },
+        "partition_labels": {
+            "author": "Wesley Santos",
+            "path": "partition_labels.md",
+            "last_updated": 1691407832,
+            "title": "Partition Labels",
+            "description": "Let's study an interesting problem.",
+            "tags": "java, leetcode",
+            "readtime": "3 min"
         }
     },
     "index": {
-        "Lawyers problem [2737]": "lawyers_problem",
-        "Partition Labels": "partition_labels",
-        "Revisiting SQL": "revisiting_sql",
+        "Java Streams": "java_streams",
         "Starting my Leetcode Journey": "starting_leetcode_journey",
-        "Revisiting Java": "revisiting_java",
-        "Who am I ?": "who_am_i"
+        "Lawyers problem [2737]": "lawyers_problem",
+        "Who am I ?": "who_am_i",
+        "Partition Labels": "partition_labels"
     }
 }

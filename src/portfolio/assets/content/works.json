@@ -1,0 +1,48 @@
+{
+  "works": [
+    {
+      "title": "Beeper",
+      "image": "/images/beeper-logo.svg",
+      "description": "Musical project inspired on google chrome’s song maker. It’s basically a note sequencer with some fancy features on top.",
+      "link": "http://beeper.netlify.app",
+      "github": "https://github.com/Wesley-M/beeper",
+      "bg": "#333333",
+      "height": 40
+    },
+    {
+      "title": "Questões PRO",
+      "image": "/images/questoes-pro-logo.svg",
+      "description": "Video where I speak about Questões PRO. A platform for questions and tests management. It's developed with React, Typescript, and Spring Boot.",
+      "link": "https://youtu.be/LJ6r5aJQNFs",
+      "bg": "#0078D7",
+      "height": 50
+    },
+    {
+      "title": "N Puzzle",
+      "image": "/images/npuzzle-logo.svg",
+      "description": "Classical NxN sliding puzzle with different size configurations. It's an experiment that I designed with VueJS. Enjoy it!",
+      "link": "http://slidingpz.netlify.app",
+      "github": "https://github.com/Wesley-M/sliding-puzzle",
+      "bg": "#228CBA",
+      "height": 45
+    },
+    {
+      "title": "TomaTimer",
+      "image": "/images/tomatimer-logo.svg",
+      "description": "Simple pomodoro-inspired task timer. Here, I experiment with Chakra UI, Typescript and React.",
+      "link": "http://toma-timer.netlify.app",
+      "github": "https://github.com/Wesley-M/TomaTimer",
+      "bg": "#EB3F3F",
+      "height": 38
+    },
+    {
+      "title": "Poetree",
+      "image": "/images/poetree-logo.svg",
+      "description": "App for reading public domain poems. It's developed with React, Typescript, MongoDB and NodeJS. All poems were scraped with Scrapy from 'https://public-domain-poetry.com.'",
+      "link": "https://poetree-main.netlify.app",
+      "github": "https://github.com/Wesley-M/poetree",
+      "bg": "#011627",
+      "height": 25
+    }
+  ]
+}

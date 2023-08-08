@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+  <path d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" style="fill: rgb(200, 118, 37);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <path d="M32.728 18L18 29.124L3.272 18L18 6.875z" style="fill: rgb(238, 227, 142);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <circle cx="17.976" cy="17.924" r="6.458" style="fill: rgb(118, 55, 0);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <path fill="#CBE9D4" d="M12.277 14.887a6.406 6.406 0 0 0-.672 2.023c3.995-.29 9.417 1.891 11.744 4.595c.402-.604.7-1.28.883-2.004c-2.872-2.808-7.917-4.63-11.955-4.614z" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <path d="M12 18.233h1v1h-1zm1 2h1v1h-1z" style="fill: rgb(249, 221, 136);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <path d="M15 18.233h1v1h-1zm2 1h1v1h-1zm4 2h1v1h-1zm-3 1h1v1h-1zm3-6h1v1h-1z" style="fill: rgb(238, 205, 85);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+  <path d="M19 20.233h1v1h-1z" style="fill: rgb(216, 183, 156);" transform="matrix(1, 0, 0, 1, 0, -4.440892098500626e-16)"/>
+</svg>

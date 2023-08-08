@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[273],{273:function(o,e,s){o.exports=s.p+"static/media/spring_boot_questions.a3aa8d8ce2093e59512f.md"}}]);

@@ -1,6 +1,9 @@
 import { Grid, Stack } from '@mui/material';
-import ReactTimeAgo from 'react-time-ago';
 import { CardTitle, Description, PreviewContainer, Tag, UpdatedAt } from './index.styles';
+import React from 'react';
+import TimeAgo from 'timeago-react';
+import { useLanguageContext } from '../../../shared/components/language-switcher/provider';
+import { useTranslation } from 'react-i18next';
 
 // Maximum length of the post preview description
 export const POST_PREVIEW_DESCRIPTION = 240;
@@ -12,12 +15,17 @@ export const PostPreview = (props) => {
     return tags.map((tag) => <Tag key={tag}>#{tag}</Tag>);
   }
 
+  const { language } = useLanguageContext();
+  const { t } = useTranslation();
+
   return (
     <PreviewContainer container>
       <Grid item sx={{ padding: '1em 1em' }} xs={12} sm={10}>
         <CardTitle>{title}</CardTitle>
         <UpdatedAt>
-          Last updated <ReactTimeAgo date={updatedAt * 1000} locale="en-US" /> · {readtime} read
+          {t('blog.post.lastUpdated')}&nbsp;
+          <TimeAgo datetime={updatedAt * 1000} locale={language} />&nbsp;·&nbsp;
+          {t('blog.post.readtime', { readtime })}
         </UpdatedAt>
         <Description>
           {description.length < POST_PREVIEW_DESCRIPTION ?

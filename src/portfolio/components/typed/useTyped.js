@@ -69,6 +69,17 @@ export const useTyped = (options) => {
   const getNextIndex = () => (loop + 1) % type.length;
 
   /**
+   * Reset typing state
+   * */
+  const reset = () => {
+    setText('');
+    setPause(false);
+    setLoop(0);
+    setSpeed(writeSpeed);
+    setDeleting(false);
+  };
+
+  /**
    * Advance the text
    * */
   const advance = () => setLoop(getNextIndex());
@@ -173,6 +184,10 @@ export const useTyped = (options) => {
     );
     return () => clearInterval(timer);
   } );
+
+  useEffect(() => {
+    reset();
+  }, [JSON.stringify(type)]);
 
   return { text, highlights: getHighlights(loop) };
 };

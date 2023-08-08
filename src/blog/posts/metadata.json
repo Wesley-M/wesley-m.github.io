@@ -3,7 +3,7 @@
         "java_streams": {
             "author": "Wesley Santos",
             "path": "java_streams.md",
-            "last_updated": 1691063303,
+            "last_updated": 1691407832,
             "title": "Java Streams",
             "description": "   In this post, I am going to explore and apply the concept of Java Streams.",
             "tags": "java",
@@ -12,7 +12,7 @@
         "starting_leetcode_journey": {
             "author": "Wesley Santos",
             "path": "starting_leetcode_journey.md",
-            "last_updated": 1691063304,
+            "last_updated": 1691407832,
             "title": "Starting my Leetcode Journey",
             "description": "Today I start practicing questions on leetcode! Here are my impressions and solutions for some questions.",
             "tags": "java, leetcode",
@@ -21,7 +21,7 @@
         "lawyers_problem": {
             "author": "Wesley Santos",
             "path": "lawyers_problem.md",
-            "last_updated": 1691063303,
+            "last_updated": 1691407832,
             "title": "Lawyers problem [2737]",
             "description": "Solving the lawyers problem on beecrowd",
             "tags": "beecrowd, sql",
@@ -30,7 +30,7 @@
         "who_am_i": {
             "author": "Wesley Santos",
             "path": "who_am_i.md",
-            "last_updated": 1691063304,
+            "last_updated": 1691407832,
             "title": "Who am I ?",
             "description": "Hi! In this post, I am going to talk a bit about myself, present my goals with the blog and show what will be the focus of the following posts. Stay tight and let's go!",
             "tags": "about me, goals",
@@ -39,7 +39,7 @@
         "partition_labels": {
             "author": "Wesley Santos",
             "path": "partition_labels.md",
-            "last_updated": 1691063303,
+            "last_updated": 1691407832,
             "title": "Partition Labels",
             "description": "Let's study an interesting problem.",
             "tags": "java, leetcode",

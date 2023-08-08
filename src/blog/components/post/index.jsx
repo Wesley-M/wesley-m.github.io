@@ -8,14 +8,17 @@ import { AboutMe } from '../about-me';
 import { Markdown } from '../markdown';
 import { PostHeader, PostTag, PostTags, PostWrapper } from './index.styles';
 import { useThemeContext } from '../../../shared/themes/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import { useLanguageContext } from '../../../shared/components/language-switcher/provider';
 
 export const Post = () => {
   const params = useParams();
-
-  const [postContent, setPostcontent] = useState('');
-  const postMetadata = posts['content'][params.id];
-
+  const { t } = useTranslation();
+  const [postContent, setPostContent] = useState('');
   const { isDarkTheme } = useThemeContext();
+  const { language } = useLanguageContext();
+
+  const postMetadata = posts['content'][params.id];
 
   const removeFileExtension = (filename) => filename.replace(/\.[^/.]+$/, '');
 
@@ -23,7 +26,7 @@ export const Post = () => {
     import(`../../posts/render/${removeFileExtension(postMetadata.path)}.md`).then((res) =>
       fetch(res.default)
           .then((response) => response.text())
-          .then((response) => setPostcontent(response))
+          .then((response) => setPostContent(response))
           .catch((err) => console.log(err)),
     );
   }, [params.id]);
@@ -33,7 +36,7 @@ export const Post = () => {
       {postContent !== '' ? (
         <>
           <PostHeader>
-            <span style={{ fontStyle: 'italic' }}>Published at</span>
+            <span style={{ fontStyle: 'italic' }}>{t('blog.post.publishedAt')}</span>
             {' ' + convertTimestamp(postMetadata['last_updated'])}
           </PostHeader>
 
@@ -60,7 +63,7 @@ export const Post = () => {
               emitMetadata="0"
               inputPosition="top"
               theme={isDarkTheme ? 'dark_dimmed' : 'light'}
-              lang="en"
+              lang={language}
               loading="lazy"
             />
           </Box>

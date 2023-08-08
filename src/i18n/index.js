@@ -12,7 +12,7 @@ i18n
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
       resources,
-      lng: 'pt', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+      lng: 'en', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
       interpolation: {
         escapeValue: false, // react already safes from xss
       },

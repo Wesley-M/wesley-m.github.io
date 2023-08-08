@@ -19,6 +19,7 @@ export const AboutTitle = styled(Typography)(({ theme }) => ({
   opacity: 0.9,
   marginBottom: '0.5em',
   color: theme.palette.text.main,
+  textTransform: 'uppercase',
 }));
 
 export const AboutContent = styled(Typography)(({ theme }) => ({

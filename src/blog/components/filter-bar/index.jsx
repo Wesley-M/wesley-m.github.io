@@ -5,9 +5,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { searchByQuery, searchByTag, tagsByOccurrence } from '../../utils/search';
 import { Search, SearchIconWrapper, StyledInputBase, Tag, TagContainer } from './index.styles';
 import { useTags } from '../../../shared/hooks/useTags';
+import { useTranslation } from 'react-i18next';
 
 export const FilterBar = (props) => {
   const { metadata, handleFilteredPosts, handleHasActiveFilters } = props;
+  const { t } = useTranslation();
 
   /**
    * Current query being used
@@ -68,7 +70,7 @@ export const FilterBar = (props) => {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          placeholder="Search for a topic you like…"
+          placeholder={t('blog.search')}
           inputProps={{ 'aria-label': 'search' }}
           onChange={(e) => handleQueryChange(e.target.value)}
         />
